@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpEgreso.master.cs" Inherits="Egreso_mpEgreso" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+    <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lRetencion" CssClass="gradientSub" runat="server" NavigateUrl="~/egreso/retencion.aspx">Realizar retención</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lVerRet" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/verRetencion.aspx">Verificar retención</asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="lReportesRetenciones" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/reporteRetenciones.aspx">Reporte de retenciones</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lRegEgresos" CssClass="gradientSub" runat="server" NavigateUrl="~/egreso/registroEgresos.aspx">Registrar gastos</asp:HyperLink>
+                </li>
+
+                 <li>
+                    <asp:HyperLink ID="lAautoconsumo" CssClass="gradientSub" runat="server" NavigateUrl="~/egreso/autoConsumo.aspx">Verificar Autoconsumos</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lCierreEgreso" CssClass="gradientSub" runat="server" NavigateUrl="~/egreso/cierreEgresos.aspx">Cerrar cajas</asp:HyperLink>
+                </li>
+
+                
+                <li>
+                    <asp:HyperLink ID="lControlCaja" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/controlCajas2.aspx">Control de cajas</asp:HyperLink>
+                </li>
+                 
+                <li>
+                    <asp:HyperLink ID="lControlAuto" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/controlAutoconsumo.aspx">Control de autoconsumos</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lAsientoEgreso" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/asientoContableEgresos.aspx">Asientos contables de egresos</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lAsientoAutoconsumo" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/asientoContableEgresosAutoconsumo.aspx">Asiento contable AUTOCONSUMO </asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lReporteEgresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/reporteEgresos.aspx">Reportes de egresos</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lResumenEgresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Egreso/resumenEgresos.aspx">Resumen de egresos</asp:HyperLink>
+                </li>
+
+            </ul>
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

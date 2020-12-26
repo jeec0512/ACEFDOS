@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpCatalogo.master.cs"
+    Inherits="Catalogo_mpCatalogo" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+    <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lMatriz" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/matriz.aspx">Matriz</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lSucursal" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/sucursal.aspx">Sucursal</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lProducto" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/producto.aspx">Producto</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lColaborador" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/colaborador.aspx">Colaborador</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lColaborador2" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/colaboradores2.aspx">Colaboradores</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="HyperLink1" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/colaborador3.aspx">Colaboradores 3</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lVendedor" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/vendedor.aspx">Vendedor</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lCuentas" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/planCuenta.aspx">Plan de cuentas</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lUsuario" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/usuario.aspx">Usuario</asp:HyperLink>
+                </li>
+
+                <!-- OPCIONES PARAESCUELA -->
+                <li>
+                    <asp:HyperLink ID="lCurso" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/curso.aspx">Curso</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lMateria" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/materia.aspx">Materia</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lAula" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/aula.aspx">Aula</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lHorario" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/horario.aspx">Horario</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lAlumno" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/alumno.aspx">Alumno</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lAuto" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/auto.aspx">Auto</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lFechaTaller" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/taller.aspx">Fechas para talleres</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lSerieTit" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/titulo.aspx">Series de títulos</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="HyperLink2" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/activarUsuario.aspx">Activar usuario</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="HyperLink3" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/roles.aspx">Roles del usuario</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="HyperLink4" CssClass="gradientSub" runat="server" NavigateUrl="~/Catalogo/menuDinamico.aspx">Menú dinámico</asp:HyperLink>
+                </li>
+            </ul>
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

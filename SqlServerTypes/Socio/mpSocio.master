@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpSocio.master.cs" Inherits="Socio_mpSocio" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+    <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lIngContrato" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/contratoBlack.aspx">Ing./contrato</asp:HyperLink>
+                </li>
+
+                <!--
+                 <li>
+                    <asp:HyperLink ID="lIngContrato2" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/ingresoContrato2.aspx">Ing./contrato2</asp:HyperLink>
+                </li>
+                -->
+                <li>
+                    <asp:HyperLink ID="lModContrato" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/modificarContrato.aspx">Mod./contrato</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lAutosSoc" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/autosXContrato.aspx">Ing/autos/contrato</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lFacturadosSoc" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/sociosFacturados.aspx">Socios facturados</asp:HyperLink>
+                </li>
+                
+                <li>
+                    <asp:HyperLink ID="lTablamembresias" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/tablaMembresias.aspx">Tabla de venta de membresías</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lActivosSoc" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/sociosActivos.aspx">Socios activos</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lEstadoSoc" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/estadoSocio.aspx">Estado del socio</asp:HyperLink>
+                </li>
+
+
+                 <li>
+                    <asp:HyperLink ID="lListaContratos" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/listadosContratos.aspx">Listado/contratos, tarjetas y guías</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lEnvioContratos" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/ImprimirContratos.aspx">Reg/impresiones/envíos</asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="lSociosInactivos" CssClass="gradientSub" runat="server" NavigateUrl="~/Socio/sociosInactivos.aspx">Socios inactivos</asp:HyperLink>
+                </li>
+
+                
+
+            </ul>
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

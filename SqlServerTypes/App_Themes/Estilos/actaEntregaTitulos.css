@@ -1,0 +1,104 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.main{
+	width: 90vw;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+figure{
+	
+}
+.title{
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	height: 6rem;
+	display:grid;
+	grid-template-columns: 1fr 6fr 1fr;
+	justify-content: space-evenly;
+}
+
+.title-img{
+	margin:auto;
+}
+
+.title-titulo{
+	display: inline-block;
+	font-size: 1.5rem;
+	margin:auto;
+	text-align: center;
+}
+
+.title-acta{
+	margin-top:8rem;
+	font-weight: bold;
+}
+
+
+.paragraf{
+	color: black;
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+}
+
+.firmas-entrega{
+	margin-bottom: 4.5rem;
+	height: 10rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.firmas-subtitle{
+	margin:auto;
+	font-size: 1rem;
+}
+.firmas-images{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.firmas-second{
+	margin:auto;
+}
+
+.images-item{
+	margin:auto;
+}
+
+.firmas-signs{
+	font-size: 0.8rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+
+.firmas-recibe{
+	margin-bottom: 4.5rem;
+	height: 10rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.linear{
+	text-decoration: overline;
+}
+.firmas-images--uno{
+	display: grid;
+	grid-template-columns: 1fr ;
+}
+
+
+.firmas-nombre{
+	text-align: center;
+}
+
+.footer .nota{
+	font-weight: bold;
+	text-align: center;
+}
+}

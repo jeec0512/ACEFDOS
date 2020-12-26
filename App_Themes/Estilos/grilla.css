@@ -1,0 +1,41 @@
+﻿.grilla {
+    border-collapse: inherit;
+    text-align: left;
+    width: 100%;
+}
+
+
+    .grilla th {
+        padding: 4px 2px;
+        color:var(--darkAneta);
+        text-shadow: 1px 1px 0px #ffffff;
+        
+        border: 0.5px solid #c1c1c1;
+        font-size: 0.8rem;
+        text-align: center;
+        font-weight:700;
+        background:var(--blancoAneta)
+    }
+
+        .grilla th a {
+            color: White;
+            text-decoration: none;
+        }
+
+            .grilla th a:hover {
+                color: #444;
+                text-decoration: none;
+            }
+
+
+    .grilla td {
+        padding: 1px;
+        border: 1px solid #c1c1c1;
+        color: var(--azulAneta);
+        font-size: 0.8rem;
+         font-weight:700;
+    }
+
+    .grilla .alt {
+        background: linear-gradient(#fff,#e6e6e6);
+    }

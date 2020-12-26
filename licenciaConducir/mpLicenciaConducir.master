@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpLicenciaConducir.master.cs" Inherits="licenciaConducir_mpLicenciaConducir" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+    <aside>
+        <nav>
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink17" CssClass="gradientSub" runat="server" NavigateUrl="~/flota/inventarioMatriculas.aspx">Inventario de matrículas</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink1" CssClass="gradientSub" runat="server" NavigateUrl="#">Licencias/conducir intructores</asp:HyperLink>
+                </li>
+            </ul>
+            
+
+
+           
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpHerramienta.master.cs" Inherits="Herramienta_mpHerramienta" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+     <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lFactura" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/factura.aspx">Factura</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lRetencion" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/retencion.aspx">Retención</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lActivarIngresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/activarCajaVentas.aspx">Activar cajas de ingresos</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lActivarEgresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/activarCajaEgresos.aspx">Activar cajas de egresos</asp:HyperLink>
+                </li>
+            </ul>
+
+           
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lControlCierreIngresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/cajaIngreso.aspx">Control de ingresos</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lControlCierreEgresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/cajaEgreso.aspx">Control de egresos</asp:HyperLink>
+                </li>
+            </ul>
+
+           
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lSRI" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/comprobanteElectronico.aspx">SRI-Comprobantes electrónicos</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lFacturasSRI" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/sriFacturas.aspx">SRI-Facturas</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lRetencionesSRI" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/sriRetenciones.aspx">SRI-Retenciones</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lNotasCreditoSRI" CssClass="gradientSub" runat="server" NavigateUrl="~/Herramienta/sriNotaCredito.aspx">SRI-Notas de Crédito</asp:HyperLink>
+                </li>
+            </ul>
+
+            <!--
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lFacturasAnuladas" CssClass="gradientSub" runat="server" NavigateUrl="#">Facturas anuladas</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lRetencionesAnuladas" CssClass="gradientSub" runat="server" NavigateUrl="#">Retenciones anuladas</asp:HyperLink>
+                </li>
+            </ul>
+                <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lIngresosEgresos" CssClass="gradientSub" runat="server" NavigateUrl="#">Ingresos y egresos</asp:HyperLink>
+                </li>
+            </ul>
+                <!--> 
+           
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

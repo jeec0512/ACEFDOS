@@ -1,0 +1,99 @@
+﻿
+
+.content-all {
+    width:400px;
+    margin:auto;
+    perspective:initial;
+    position:relative;
+    margin-top:50px;
+}
+
+.content-evento {
+    width:100%;
+    position:absolute;
+    animation: rotar 10s infinite linear;
+    transform-style:preserve-3d;
+}
+
+.content-evento:hover {
+            animation-play-state:paused;
+            cursor:pointer;
+        }
+
+ .content-evento figure:nth-child(1) {
+             transform: rotateY('0deg') 
+            translateZ('300px');
+        }
+
+         .content-evento figure:nth-child(2) {
+            transform: rotateY('51deg')
+            translateZ('300px');
+        }
+
+        .content-evento figure:nth-child(3) {
+            transform: rotateY('102deg')
+            translateZ('300px');
+        }
+
+        .content-evento figure:nth-child(4) {
+            transform: rotateY('153deg')
+            translateZ('300px');
+        }
+
+        .content-evento figure:nth-child(5) {
+            transform: rotateY('204deg')
+            translateZ('300px');
+        }
+
+        .content-evento figure:nth-child(6) {
+            transform: rotateY('255deg')
+            translateZ('300px');
+        }
+
+        .content-evento figure :nth-child(7) {
+            transform: rotateY('306deg')
+            translateZ('300px');
+        }
+
+        .content-evento figure :nth-child(8) {
+            transform: rotateY('360deg')
+            translateZ('300px');
+        }
+
+       
+        
+    .content-evento img {
+        width:100%;
+         transition: all 300ms;
+    }
+
+        .content-evento img:hover {
+            transform: scale(1.8);
+            transition: all 300ms;
+        }
+
+@keyframes rotar {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform:rotateY(360deg);
+    }
+
+    }
+
+
+    .content-evento figure {
+        width:100%;
+        height:400px;
+        overflow:hidden;
+        position:absolute;
+        box-shadow: 0px 0px 20px 0px black;
+    }
+
+    .content-evento figure:hover {
+        box-shadow:none;
+        transition: 300ms;
+    }
+        
+       

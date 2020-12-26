@@ -1,0 +1,57 @@
+﻿.main-side {
+     background: red;
+    transform: translate(50vw)
+}
+.toggle-menu {
+    content: "";
+    display:block;
+    width: 2em;
+    height: 1.5em;
+    margin-right:1em;
+    cursor: pointer;
+    background: linear-gradient(#000 20%,
+                                transparent 20%, transparent 40%,
+                                #000 40%, #000 60%,
+                                transparent 60%, transparent 80%,
+                                #000 80%);
+
+}
+
+ .toggle-menu :hover {
+    content: "";
+    display:block;
+    width: 2em;
+    height: 1.5em;
+    margin-right:1em;
+    cursor: pointer;
+    background: linear-gradient(#000 20%,
+                                transparent 20%, transparent 40%,
+                                red 40%, #000 60%,
+                                transparent 60%, transparent 80%,
+                                red 80%);
+    }
+
+.main-nav {
+   position:fixed;
+   top:11rem;
+   left:0;
+   background:  #F4F4F4;
+   width: 20vw;
+   height:100vh;
+   transform: translate(-100%);
+   color: #000;
+}
+
+.main-menu {
+    margin-top:0;
+    margin-bottom:0;
+    list-style:none;
+    padding-left:0;
+}
+
+.main-menu li {
+    padding: .5em 1em;
+   
+    
+    
+}

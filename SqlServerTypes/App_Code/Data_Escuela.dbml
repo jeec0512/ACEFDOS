@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Escuela" Class="Data_EscuelaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=UIODBSERVER\ANETA;Initial Catalog=Escuela;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EscuelaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_SicoPractico" Member="tbl_SicoPractico">
+    <Type Name="tbl_SicoPractico">
+      <Column Name="id_SicoPractico" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sucursal" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipoDocumento" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="cedula" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="factura" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaSicotecnico" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaPractico" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="notaPractico" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="estadoPsico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="instructorEvaluador" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="resultado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="elaborado" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="iniciales" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="oficio" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="observacion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="directorEscuela" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="responsablePractico" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="responsablePsico" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

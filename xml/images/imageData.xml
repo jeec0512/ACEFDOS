@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Images>
+<image name="covid1.png" order ="0" ></image>
+   <image name="covid1.png" order ="1" ></image>
+   <image name="covid2.png" order ="2" ></image>
+   <image name="covid3.png" order ="3" ></image>
+   <image name="covid4.png" order ="4" ></image>
+   <image name="covid5.png" order ="5" ></image>
+</Images>

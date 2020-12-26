@@ -1,0 +1,387 @@
+﻿.lblForm {
+    margin: 10px 10px 0 0;
+    background: none repeat scroll 0 0 #F3F3F3;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: 20px;
+    padding: 3px 7px;
+    width: 20%;
+   text-align:right;
+    color: #1d92e9;
+}
+
+.lblFormAviso {
+    margin: 10px 10px 0 0;
+    background: none repeat scroll 0 0 #F3F3F3;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: 20px;
+    padding: 3px 7px;
+    width: 20%;
+   text-align:center;
+    color: #f00;
+}
+
+
+.txtForm {
+    margin: 10px 10px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 24px;
+    padding:3px 3px;
+    width: 70%;
+}
+
+.btnForm {
+    color:  #0C80BF;
+    background-color: #F3F3F3;
+    font-weight: 800;
+    
+}
+
+
+.btnForm:hover {
+    color: #F3F3F3 ;
+     background-color: #0C80BF;
+     font-weight: 800;
+}
+
+.rbForm {
+    
+}
+
+.blForm {
+   
+    color:  #0C80BF;
+    background-color: #F3F3F3;
+    font-weight: 800;
+}
+
+.blForm:hover {
+      color: #F3F3F3 ;
+     background-color: #0C80BF;
+     font-weight: 800;
+}
+
+
+.chkForm {
+    display:none;
+}
+
+.chkForm {
+    background-color:white;
+    border:1px solid #ccc;
+    content:"";
+    display:inline-block;
+    font-size: 12px;
+    height:16px;
+    width:16px;
+    line-height:16px;
+    margin:-2px 6px 0 0;
+    text-align:center;
+    vertical-align: middle;
+}
+
+.chkForm:checked {
+    content:"\2713";
+    margin: 10px 10px 50px 50px;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 24px;
+    padding:3px 3px;
+    width: 70%;
+    }
+
+.pnForm {
+    border : outset;
+    border-color:aliceblue;
+    background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:small;
+    font-weight: bold;
+    color: #F3F3F3;
+    margin: 10px 10px 0 0;
+    padding: 3px 7px;
+    width:100%;
+    text-align:left;
+}
+
+.pnFormTitulo {
+    border : outset;
+    border-color:aliceblue;
+    background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:small;
+    font-weight: bold;
+    color: #F3F3F3;
+    margin: 10px 10px 0 0;
+    padding: 3px 7px;
+    width:90%;
+    text-align:left;
+}
+
+.pnFormHijo {
+
+   background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:small;
+    font-weight: bold;
+    color: #F3F3F3;
+    margin: 10px 10px 0 0;
+    padding: 3px 7px;
+    width:35%;
+    text-align:left;
+
+}
+
+.pnFormSocio {
+
+   background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:small;
+    font-weight: bold;
+    color: #F3F3F3;
+    margin: 1px 1px 0 0;
+    padding: 1px 1px;
+    width:32%;
+    text-align:left;
+
+}
+
+
+.pnFormChk {
+    margin: 10px 10px 0 0;
+    background-color: #F3F3F3;
+    
+    height: 24px;
+    padding:3px 3px;
+    width: 70%;
+}
+
+.pnFormDdl {
+    margin: 10px 10px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 24px;
+    padding:3px 3px;
+    width: 70%;
+}
+
+.pnFormBotonera {
+     margin: 10px 10px 0 0;
+    background-color: #7CBACF;
+    border: 1px solid #CCCCCC;
+    height: 24px;
+    padding:3px 3px;
+    width: 70%;
+}
+
+
+/*PARA PANTALLAS PEQUEÑAS*/
+
+.pnMedio{
+    background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:small;
+    font-weight: bold;
+    color: #1d92e9;
+    margin: 3px 3px 0 0;
+    padding: 3px 3px;
+    width:32%;
+    text-align:left;
+}
+
+.pnPeq {
+    background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:small;
+    font-weight: bold;
+    color: #1d92e9;
+    margin: 3px 3px 0 0;
+    padding: 3px 3px;
+    width:23%;
+    text-align:left;
+}
+.lblPeq {
+    margin: 3px 3px 0 0;
+    background: none repeat scroll 0 0 #F3F3F3;
+    display: block;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    /*height: 20px;*/
+    padding: 3px 7px;
+    width: 30%;
+   text-align:left;
+    color: #1d92e9;
+}
+
+
+.txtTitPeq {
+    margin: 3px 3px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    padding: 3px 3px;
+    width: 95%;
+    color:black;
+}
+
+.txtPeq {
+    margin: 3px 3px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    padding:3px 3px;
+    width: 57%;
+}
+
+.pnPeqDdl {
+    margin: 1px 1px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    padding:3px 3px;
+    width: 92.5%;
+}
+
+.pnSocioDdl {
+    margin: 1px 1px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    padding:3px 3px;
+    width: 60%;
+    font-size:smaller;
+}
+
+.peqDdl {
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    padding:0;
+    width: 100%;
+    font-size:smaller;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.txtSmall {
+    margin: 3px 3px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    height: 20px;
+    padding:3px 3px;
+    width: 50%;
+}
+
+
+.lblSmall {
+    margin: 3px 3px 0 0;
+    background: none repeat scroll 0 0 #F3F3F3;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: 20px;
+    padding: 3px 7px;
+    width: 50%;
+   text-align:right;
+    color: #1d92e9;
+}
+
+
+.pnBit {
+    background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:small;
+    font-weight: bold;
+    color: #1d92e9;
+    margin:  0;
+    padding: 0;
+    width:94%;
+    text-align:left;
+}
+
+.txtBit {
+    margin: 3px 3px 0 0;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    padding:3px 3px;
+    width: 24%;
+}
+
+
+.lblBit {
+    margin: 3px 3px 0 0;
+    background: none repeat scroll 0 0 #F3F3F3;
+    display: block;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+ 
+    padding: 3px 7px;
+    width: 26%;
+   text-align:right;
+    color: #1d92e9;
+}
+
+
+.pnPeqSoc {
+    background: none repeat scroll 0 0 #F3F3F3;
+    display:inline-block;
+    float: left;
+    font-size:inherit;
+    font-weight: bold;
+    color: #1d92e9;
+    margin: 1px 1px 0 0;
+    padding: 1px 1px;
+    width:47%;
+    text-align:left;
+}
+
+.Verde {
+    background-color:#31B404;
+    color:#FFFFFF;
+    font-weight: bold;
+}
+.Amarillo {
+    background-color:#F7FE2E;
+    font-weight: bold;
+
+}
+.Rojo {
+    background-color:#FF0000;
+    color:#FFFFFF;
+    font-weight: bold;
+}
+.DisplayNone {
+    display:none;
+}
+
+
+.pnListarGridRecacaudacion {
+    border : medium outset aliceblue;
+    background: none repeat scroll 0 0 #E1E1C8;
+    display:inline-block;
+    float: left;
+    font-size:  small;
+    font-weight: bold;
+    color: #126ae4;
+    margin: 0;
+    padding: 1px 1px;
+    text-align:left;
+}
+

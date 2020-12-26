@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpIngreso.master.cs" Inherits="Ingreso_mpIngreso" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+     <aside>
+        <nav>
+           <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink1" CssClass="gradientSub" runat="server" NavigateUrl="~/Ingreso/facturacionElectronica.aspx">Facturación Electrónica</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lFactura" CssClass="gradientSub" runat="server" NavigateUrl="~/Ingreso/factura.aspx">Verificar factura</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lListarFacuras" CssClass="gradientSub" runat="server" NavigateUrl="~/Ingreso/facturasEmitidas.aspx">Facturas emitidas</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lResumenFacturacion" CssClass="gradientSub" runat="server" NavigateUrl="~/Ingreso/resumenFacturacion.aspx">Resumen de facturación</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lFacturadosxGrupos" CssClass="gradientSub" runat="server" NavigateUrl="~/Ingreso/facturadosxGrupos.aspx">Facturas por grupos</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lFacturasAnuladas" CssClass="gradientSub" runat="server" NavigateUrl="~/Ingreso/facturasAnuladas.aspx">Facturas anuladas</asp:HyperLink>
+                </li>
+            </ul>
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+     <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

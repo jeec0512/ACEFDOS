@@ -1,0 +1,20 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpInforme.master.cs" Inherits="Informes_mpInforme" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+    <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lVentas" CssClass="gradientSub" runat="server" NavigateUrl="~/Informes/ventasGrupos.aspx">Ventas por grupo</asp:HyperLink>
+                </li>
+            </ul>
+         </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+     <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

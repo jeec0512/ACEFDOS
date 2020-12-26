@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DATACORE" Class="Data_DatacoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.1.106\ANETA;Initial Catalog=DATACORE;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DATACOREConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FACTURA_DETALLE" Member="FACTURA_DETALLE">
+    <Type Name="FACTURA_DETALLE">
+      <Column Name="FDE_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FDE_ESTABLECIMIENTO" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_PUNTOEMISION" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_SECUENCIAL" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_ITEM" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODIGO" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODIGOAUX" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_DESCRIPCION" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CANTIDAD" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="FDE_PRECIOUNITARIO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_DESCUENTO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_TOTALSINIMPUESTOS" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODIMPUESTO" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODPORCENTAJEIMP" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_TARIFA" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FDE_BASEIMPONIBLE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_VALOR" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="FACTURA_FACTURA_DETALLE" Member="FACTURA" ThisKey="FAC_ID" OtherKey="FAC_ID" Type="FACTURA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COMPROBARETEN_DETALLE" Member="COMPROBARETEN_DETALLE">
+    <Type Name="COMPROBARETEN_DETALLE">
+      <Column Name="CDE_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CDE_CODIGO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CDE_CODIGORETENCION" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CDE_BASEIMPONIBLE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CDE_PORCENTARETENER" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CDE_VALORRETENIDO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CDE_CODDOCSUSTENTO" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CDE_NUMDOCSUSTENTO" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CDE_FECHAEMISDOCSUST" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="COMPROBANTERETENCION_COMPROBARETEN_DETALLE" Member="COMPROBANTERETENCION" ThisKey="CRE_ID" OtherKey="CRE_ID" Type="COMPROBANTERETENCION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NOTACREDITO" Member="NOTACREDITO">
+    <Type Name="NOTACREDITO">
+      <Column Name="NCR_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NCR_AMBIENTE" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="NCR_TIPOEMISION" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="NCR_RAZONSOCIAL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NCR_NOMBRECOMERCIAL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NCR_RUC" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="NCR_CLAVEACCESO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCR_CODDOCUMENTO" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="NCR_ESTABLECIMIENTO" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="NCR_PUNTOEMISION" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="NCR_SECUENCIAL" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="NCR_DIRMATRIZ" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NCR_FECHAEMISION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NCR_DIRESTABLECIMIENTO" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NCR_TIPOIDENTIFICACION" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="NCR_RAZONCOMPRADOR" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NCR_RUCCOMPRADOR" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="NCR_CONTRIBUYENTE" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NCR_OBLIGADO" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="NCR_RISE" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NCR_CODDOCUMENTOMOD" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="NCR_NUMDOCMODIFICADO" Type="System.String" DbType="NVarChar(17)" CanBeNull="true" />
+      <Column Name="NCR_FECHAEMISIONMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NCR_TOTALSINIMP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NCR_VALORMODIFICACION" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NCR_MONEDA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCR_CODIMPUESTO" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="NCR_CODPORCENTAJEIMP" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="NCR_BASEIMPONIBLE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NCR_VALORIMPUESTO" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NCR_MOTIVO" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NCR_CODCLIENTE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NCR_SUCURSAL" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="NCR_ESTADO" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="NCR_SRI" Type="System.String" DbType="NVarChar(800)" CanBeNull="true" />
+      <Association Name="NOTACREDITO_NOTACREDITO_DETALLE" Member="NOTACREDITO_DETALLE" ThisKey="NCR_ID" OtherKey="NCR_ID" Type="NOTACREDITO_DETALLE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NOTACREDITO_DETALLE" Member="NOTACREDITO_DETALLE">
+    <Type Name="NOTACREDITO_DETALLE">
+      <Column Name="NCD_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NCD_ESTABLECIMIENTO" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_PUNTOEMISION" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_SECUENCIAL" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_CODIGO" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_CODIGOAUX" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_DESCRIPCION" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_CANTIDAD" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_PRECIOUNITARIO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_DESCUENTO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_TOTALSINIMPUESTOS" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_CODIMPUESTO" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_CODPORCENTAJEIMP" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_TARIFA" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_BASEIMPONIBLE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NCD_VALOR" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NCR_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="NOTACREDITO_NOTACREDITO_DETALLE" Member="NOTACREDITO" ThisKey="NCR_ID" OtherKey="NCR_ID" Type="NOTACREDITO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENTE" Member="CLIENTE">
+    <Type Name="CLIENTE">
+      <Column Name="CLI_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLI_RUC" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="CLI_APELLIDOP" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_APELLIDOM" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CLI_NOMBRE" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CLI_OBLIGADO" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="CLI_PROVINCIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CLI_CIUDAD" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CLI_DIRPRINCIPAL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CLI_DIRNUMERAL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_DIRSECUNDARIA" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CLI_SECTOR" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CLI_TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_CELULAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_TIPOSANGRE" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CLI_NACIONALIDAD" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CLI_ESTADOCIVIL" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CLI_FECHANACIMIENTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CLI_ENCUESTA" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CLI_GENERO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTO" Member="PRODUCTO">
+    <Type Name="PRODUCTO">
+      <Column Name="PRO_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PRO_CODIGO" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_DESCRIPCION" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_IVA" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_PRECIO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_PRECIO2" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_PRECIO3" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_ESTADO" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PRO_COMBO" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PVE_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PRO_MODIFICACION" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="PRO_CUENTACONTABLE" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="PRO_CCOSTO" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="PRO_CCDESCUENTO" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="pro_grupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FACTURA" Member="FACTURA">
+    <Type Name="FACTURA">
+      <Column Name="FAC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FAC_AMBIENTE" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TIPOEMISION" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_RAZONSOCIAL" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_NOMBRECOMERCIAL" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_RUC" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_CLAVEACCESO" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_CODDOCUMENTO" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_ESTABLECIMIENTO" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_PUNTOEMISION" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_SECUENCIAL" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_DIRMATRIZ" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_FECHAEMISION" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_DIRESTABLECIMIENTO" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_CONTRIBUYENTE" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_OBLIGADO" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TIPOIDENTIFICACION" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_RAZONCOMPRADOR" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_RUCCOMPRADOR" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TOTALSINIMP" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TOTALDESCUENTO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_CODIMPUESTO" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_CODPORCENTAJEIMP" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_BASEIMPONIBLE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_VALORIMPUESTO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_PROPINA" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_IMPORTETOTAL" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_MONEDA" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_CODCLIENTE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_VENDEDOR" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_SUCURSAL" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TIPOCONCEPTO" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TIPOCURSO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="FAC_CURSO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="FAC_SOCIO" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="FAC_OBSERVACION" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FAC_COP1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FAC_COP2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FAC_ESTADO" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="FAC_SRI" Type="System.String" DbType="NVarChar(800)" CanBeNull="true" />
+      <Column Name="FAC_RECAUDADO" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FAC_RETENIDOIVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FAC_FORMA_PAGO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAC_RETENIDOFUENTE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FAC_AUTORIZACION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FAC_FECHA_AUTORIZACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FAC_CODFORMAPAGO" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FAC_MAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="FACTURA_FACTURA_DETALLE" Member="FACTURA_DETALLE" ThisKey="FAC_ID" OtherKey="FAC_ID" Type="FACTURA_DETALLE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_GrupoProducto" Member="tbl_GrupoProducto">
+    <Type Name="tbl_GrupoProducto">
+      <Column Name="id_GrupoProducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cuenta" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="ccosto" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="tipoUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COMPROBANTERETENCION" Member="COMPROBANTERETENCION">
+    <Type Name="COMPROBANTERETENCION">
+      <Column Name="CRE_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CRE_AMBIENTE" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_TIPOEMISION" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_RAZONSOCIAL" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_NOMBRECOMERCIAL" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_RUC" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_CLAVEACCESO" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_CODDOCUMENTO" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_ESTABLECIMIENTO" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_PUNTOEMISION" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_SECUENCIAL" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_DIRMATRIZ" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_FECHAEMISION" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_DIRESTABLECIMIENTO" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_CONTRIBUYENTE" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_OBLIGADO" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_TIPSUJETRETENCI" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_RAZONSOCIRETENCI" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_IDENTIFICASUJERETE" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_PERIODOFISCAL" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CRE_DIRECCION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CRE_TELEFONO" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CRE_MAIL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CRE_ESTADO" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="CRE_SRI" Type="System.String" DbType="NVarChar(800)" CanBeNull="true" />
+      <Column Name="CRE_XML" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CRE_AUTORIZACION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CRE_FECHAAUTORIZACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Association Name="COMPROBANTERETENCION_COMPROBARETEN_DETALLE" Member="COMPROBARETEN_DETALLE" ThisKey="CRE_ID" OtherKey="CRE_ID" Type="COMPROBARETEN_DETALLE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CURSO" Member="CURSO">
+    <Type Name="CURSO">
+      <Column Name="CUR_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CUR_DESCRIPCION" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TCU_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_facturacionxfechaxsucursalxtipo" Method="sp_facturacionxfechaxsucursalxtipo">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="NVarChar(3)" />
+    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechainicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechafin" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_facturacionxfechaxsucursalxtipoResult">
+      <Column Name="Sucursal" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Descuento" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Iva" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmRecaudacion" Method="sp_abmRecaudacion">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="FAC_SUCURSAL" Parameter="fAC_SUCURSAL" Type="System.String" DbType="NVarChar(3)" />
+    <Parameter Name="FAC_SECUENCIAL" Parameter="fAC_SECUENCIAL" Type="System.String" DbType="NVarChar(9)" />
+    <Parameter Name="FAC_RECAUDADO" Parameter="fAC_RECAUDADO" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="FAC_RETENIDOIVA" Parameter="fAC_RETENIDOIVA" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="FAC_RETENIDOFUENTE" Parameter="fAC_RETENIDOFUENTE" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="FAC_ID" Parameter="fAC_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FacturaCabecera" Method="sp_FacturaCabecera">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sucursal" Type="System.String" DbType="NVarChar(3)" />
+    <Parameter Name="secuencial" Type="System.String" DbType="NVarChar(9)" />
+    <Parameter Name="fechainicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechafin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fac_id" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <ElementType Name="sp_FacturaCabeceraResult">
+      <Column Name="FAC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_ESTABLECIMIENTO" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_PUNTOEMISION" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_SECUENCIAL" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_FECHAEMISION" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_RAZONCOMPRADOR" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_RUCCOMPRADOR" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TOTALSINIMP" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TOTALDESCUENTO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_BASEIMPONIBLE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_VALORIMPUESTO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_PROPINA" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_IMPORTETOTAL" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_CODCLIENTE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_VENDEDOR" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_SUCURSAL" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TIPOCONCEPTO" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_TIPOCURSO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="FAC_CURSO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="FAC_SOCIO" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="FAC_OBSERVACION" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FAC_COP1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FAC_COP2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FAC_ESTADO" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="FAC_SRI" Type="System.String" DbType="NVarChar(800)" CanBeNull="true" />
+      <Column Name="FAC_RECAUDADO" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FAC_RETENIDOIVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FAC_FORMA_PAGO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAC_RETENIDOFUENTE" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FAC_AUTORIZACION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FAC_FECHA_AUTORIZACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FAC_CODFORMAPAGO" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_FacturaDetalle" Method="sp_FacturaDetalle">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sucursal" Type="System.String" DbType="NVarChar(3)" />
+    <Parameter Name="secuencial" Type="System.String" DbType="NVarChar(9)" />
+    <Parameter Name="fechainicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechafin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fac_id" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <ElementType Name="sp_FacturaDetalleResult">
+      <Column Name="FDE_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_ESTABLECIMIENTO" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_PUNTOEMISION" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_SECUENCIAL" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODIGO" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODIGOAUX" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_DESCRIPCION" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CANTIDAD" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="FDE_PRECIOUNITARIO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_DESCUENTO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_TOTALSINIMPUESTOS" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODIMPUESTO" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_CODPORCENTAJEIMP" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_TARIFA" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FDE_BASEIMPONIBLE" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FDE_VALOR" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FAC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_listarCursos" Method="sp_listarCursos">
+    <ElementType Name="sp_listarCursosResult">
+      <Column Name="CUR_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CUR_DESCRIPCION" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TCU_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,1622 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_ESCUELA" Class="Data_DB_ESCUELADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=UIODBSERVER\ANETA;Initial Catalog=DB_ESCUELA;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_ESCUELAConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TB_REGISTRO_DETALLE" Member="TB_REGISTRO_DETALLE">
+    <Type Name="TB_REGISTRO_DETALLE">
+      <Column Name="RDET_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REG_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RDET_OBSERVACION" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="TB_ASIGNA_MATERIA_TB_REGISTRO_DETALLE" Member="TB_ASIGNA_MATERIA" ThisKey="ASM_ID" OtherKey="ASM_ID" Type="TB_ASIGNA_MATERIA" IsForeignKey="true" />
+      <Association Name="TB_REGISTRO_ALUMNO_TB_REGISTRO_DETALLE" Member="TB_REGISTRO_ALUMNO" ThisKey="REG_ID" OtherKey="REG_ID" Type="TB_REGISTRO_ALUMNO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_AULA" Member="TB_AULA">
+    <Type Name="TB_AULA">
+      <Column Name="AUL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AUL_ESCUELA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AUL_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AUL_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AUL_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Association Name="TB_AULA_TB_ASIGNA_MATERIA" Member="TB_ASIGNA_MATERIA" ThisKey="AUL_ID" OtherKey="AUL_ID" Type="TB_ASIGNA_MATERIA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_CURSO" Member="TB_CURSO">
+    <Type Name="TB_CURSO">
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MOD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUR_NOMENCLATURA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUR_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CUR_FECHA_INICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUR_FECHA_FIN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUR_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CUR_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUR_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TB_CURSO_TB_MATERIA" Member="TB_MATERIA" ThisKey="CUR_ID" OtherKey="CUR_ID" Type="TB_MATERIA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_HORARIO" Member="TB_HORARIO">
+    <Type Name="TB_HORARIO">
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HOR_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HOR_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Association Name="TB_HORARIO_TB_ASIGNA_MATERIA" Member="TB_ASIGNA_MATERIA" ThisKey="HOR_ID" OtherKey="HOR_ID" Type="TB_ASIGNA_MATERIA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_MATERIA" Member="TB_MATERIA">
+    <Type Name="TB_MATERIA">
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAT_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MAT_VALOR" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Association Name="TB_MATERIA_TB_ASIGNA_MATERIA" Member="TB_ASIGNA_MATERIA" ThisKey="MAT_ID" OtherKey="MAT_ID" Type="TB_ASIGNA_MATERIA" />
+      <Association Name="TB_CURSO_TB_MATERIA" Member="TB_CURSO" ThisKey="CUR_ID" OtherKey="CUR_ID" Type="TB_CURSO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_TALLER" Member="TB_TALLER">
+    <Type Name="TB_TALLER">
+      <Column Name="TAL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sucursal" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="TAL_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TAL_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TAL_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TAL_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_PEDIDOS" Member="TB_PEDIDOS">
+    <Type Name="TB_PEDIDOS">
+      <Column Name="PED_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NUMPEDIDO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NUMERAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMREGISTROS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CURSO" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TIPOPEDIDO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="USUARIO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_ASIGNA_MATERIA" Member="TB_ASIGNA_MATERIA">
+    <Type Name="TB_ASIGNA_MATERIA">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AUL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VEH_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAL_USER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TAL_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASM_DIAS" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ASM_TFINICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASM_TFFIN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TB_ASIGNA_MATERIA_TB_REGISTRO_DETALLE" Member="TB_REGISTRO_DETALLE" ThisKey="ASM_ID" OtherKey="ASM_ID" Type="TB_REGISTRO_DETALLE" />
+      <Association Name="TB_AULA_TB_ASIGNA_MATERIA" Member="TB_AULA" ThisKey="AUL_ID" OtherKey="AUL_ID" Type="TB_AULA" IsForeignKey="true" />
+      <Association Name="TB_HORARIO_TB_ASIGNA_MATERIA" Member="TB_HORARIO" ThisKey="HOR_ID" OtherKey="HOR_ID" Type="TB_HORARIO" IsForeignKey="true" />
+      <Association Name="TB_MATERIA_TB_ASIGNA_MATERIA" Member="TB_MATERIA" ThisKey="MAT_ID" OtherKey="MAT_ID" Type="TB_MATERIA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_ALUMNO" Member="TB_ALUMNO">
+    <Type Name="TB_ALUMNO">
+      <Column Name="ALU_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ALU_IDENTIFICACION" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ALU_APELLIDOS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ALU_NOMBRES" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ALU_DIRECCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ALU_TELEFONO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ALU_TIPOSANGRE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ALU_NACIONALIDAD" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ALU_ESTADOCIVIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ALU_GENERO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ALU_FECHANACIMIENTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ALU_EMAIL" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ALU_INSTRUCCION" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ALU_TIPOLICENCIA" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ALU_CELULAR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ALU_FACTURA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="TB_ALUMNO_TB_REGISTRO_ALUMNO" Member="TB_REGISTRO_ALUMNO" ThisKey="ALU_ID" OtherKey="ALU_ID" Type="TB_REGISTRO_ALUMNO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_REGISTRO_NOTA_CON" Member="TB_REGISTRO_NOTA_CON">
+    <Type Name="TB_REGISTRO_NOTA_CON">
+      <Column Name="RNOTC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REG_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_CIRUC" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="RNOTC_APELLIDOS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RNOTC_NOMBRES" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RNOTC_LICENCIA" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PSIC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PSIC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PAUX_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PAUX_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_MEC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_MEC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PETR_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_FACT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RNOTC_FACT_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_APROBADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_OP1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP3" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP4" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP5" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP6" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP7" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OBSERVACIONES" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RNOTC_USU_MODIFICA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PEDIDO_TITULOS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RNOTC_TITULO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_ACTA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RNOTC_CONFIRMACION" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_BLOQUEO_RNOTAS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_ENVIADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_REGISTRO_ALUMNO" Member="TB_REGISTRO_ALUMNO">
+    <Type Name="TB_REGISTRO_ALUMNO">
+      <Column Name="REG_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ALU_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REG_OBSERVACION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="REG_FACTURANUMERO" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="REG_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REG_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_ESTADO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REG_SUCURSAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PETRI_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_PETRIRESULTADO" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PED_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_NUMPERMISO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REG_MENOR_EDAD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REG_ADELANTO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CUR_ID_REAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TB_REGISTRO_ALUMNO_TB_REGISTRO_DETALLE" Member="TB_REGISTRO_DETALLE" ThisKey="REG_ID" OtherKey="REG_ID" Type="TB_REGISTRO_DETALLE" />
+      <Association Name="TB_ALUMNO_TB_REGISTRO_ALUMNO" Member="TB_ALUMNO" ThisKey="ALU_ID" OtherKey="ALU_ID" Type="TB_ALUMNO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_abmCurso" Method="sp_abmCurso">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_NOMENCLATURA" Parameter="cUR_NOMENCLATURA" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CUR_DESCRIPCION" Parameter="cUR_DESCRIPCION" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="CUR_FECHA_INICIO" Parameter="cUR_FECHA_INICIO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CUR_FECHA_FIN" Parameter="cUR_FECHA_FIN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CUR_ACTIVO" Parameter="cUR_ACTIVO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CUR_USUARIO" Parameter="cUR_USUARIO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CUR_FECHAMOD" Parameter="cUR_FECHAMOD" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_abmCursoResult">
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MOD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUR_NOMENCLATURA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUR_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CUR_FECHA_INICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUR_FECHA_FIN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUR_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CUR_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUR_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmAula" Method="sp_abmAula">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ESC_ID" Parameter="eSC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ESCUELA" Parameter="aUL_ESCUELA" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="AUL_DESCRIPCION" Parameter="aUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="AUL_ACTIVO" Parameter="aUL_ACTIVO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AUL_USUARIO" Parameter="aUL_USUARIO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="AUL_FECHAMOD" Parameter="aUL_FECHAMOD" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="NChar(3)" />
+    <Parameter Name="AUL_CAPACIDAD" Parameter="aUL_CAPACIDAD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_abmAulaResult">
+      <Column Name="AUL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AUL_ESCUELA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AUL_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AUL_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AUL_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="AUL_CAPACIDAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_VerHorarios" Method="sp_VerHorarios">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_VerHorariosResult">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AUL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VEH_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cur_nomenclatura" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mat_descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="aul_escuela" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="hor_inicio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="hor_fin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="tal_fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmAuto" Method="sp_abmAuto">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="VEH_MARCA" Parameter="vEH_MARCA" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_MODELO" Parameter="vEH_MODELO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_ANIO" Parameter="vEH_ANIO" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="VEH_NUMERO" Parameter="vEH_NUMERO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_CHASIS" Parameter="vEH_CHASIS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_MOTOR" Parameter="vEH_MOTOR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_PLACA" Parameter="vEH_PLACA" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SUC_ID" Parameter="sUC_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="TVE_ID" Parameter="tVE_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="PER_ID" Parameter="pER_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="VEH_ESTADO" Parameter="vEH_ESTADO" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_abmAutoResult">
+      <Column Name="VEH_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="VEH_MARCA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MODELO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_ANIO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VEH_NUMERO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_CHASIS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MOTOR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_PLACA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SUC_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TVE_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PER_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VEH_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="numplaca" Type="System.String" DbType="VarChar(203)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_generaHorarios" Method="sp_generaHorarios">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_abmTaller" Method="sp_abmTaller">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ESC_ID" Parameter="eSC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sucursal" Type="System.String" DbType="NChar(3)" />
+    <Parameter Name="TAL_FECHA" Parameter="tAL_FECHA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="TAL_USUARIO" Parameter="tAL_USUARIO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TAL_FECHAMOD" Parameter="tAL_FECHAMOD" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="TAL_ESTADO" Parameter="tAL_ESTADO" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_abmTallerResult">
+      <Column Name="TAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sucursal" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="TAL_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TAL_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TAL_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TAL_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="mod_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_actualizaPsicotecnicoCurso" Method="sp_actualizaPsicotecnicoCurso">
+    <Parameter Name="curso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sucursal" Type="System.String" DbType="NVarChar(3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_abmPedidos" Method="sp_abmPedidos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PED_ID" Parameter="pED_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NUMPEDIDO" Parameter="nUMPEDIDO" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="NUMERAL" Parameter="nUMERAL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NUMREGISTROS" Parameter="nUMREGISTROS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.String" DbType="VarChar(7)" />
+    <Parameter Name="TIPOPEDIDO" Parameter="tIPOPEDIDO" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="USUARIO" Parameter="uSUARIO" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="FECHAREGISTRO" Parameter="fECHAREGISTRO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ASIGNADO" Parameter="aSIGNADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_abmPedidosResult">
+      <Column Name="PED_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NUMPEDIDO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NUMERAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMREGISTROS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CURSO" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TIPOPEDIDO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="USUARIO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_listarPedidos" Method="sp_listarPedidos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_listarPedidosResult">
+      <Column Name="PED_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NUMPEDIDO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NUMERAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMREGISTROS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CURSO" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="TIPOPEDIDO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="USUARIO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RegistroNotasConsolidado" Method="sp_RegistroNotasConsolidado">
+    <Parameter Name="Sucursal" Parameter="sucursal" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CursoID" Parameter="cursoID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_abmCtrlTit" Method="sp_abmCtrlTit">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="CTRL_ID" Parameter="cTRL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TIT_ID" Parameter="tIT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FECHAASIGANACION" Parameter="fECHAASIGANACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="ACTA" Parameter="aCTA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ALTERNO" Parameter="aLTERNO" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="sp_abmCtrlTitResult">
+      <Column Name="CTRL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAASIGANACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DESDE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HASTA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ACTA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ALTERNO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmEscuela" Method="sp_abmEscuela">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ESC_ID" Parameter="eSC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ESC_DESCRIPCION" Parameter="eSC_DESCRIPCION" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="ESC_DIRECCION" Parameter="eSC_DIRECCION" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="ESC_TELEFONO" Parameter="eSC_TELEFONO" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="CIU_ID" Parameter="cIU_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ESC_SUC" Parameter="eSC_SUC" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_abmEscuelaResult">
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ESC_DESCRIPCION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ESC_DIRECCION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ESC_TELEFONO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CIU_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ESC_SUC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmPedidosMaximo" Method="sp_abmPedidosMaximo">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PED_ID" Parameter="pED_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NUMPEDIDO" Parameter="nUMPEDIDO" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="NUMERAL" Parameter="nUMERAL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NUMREGISTROS" Parameter="nUMREGISTROS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.String" DbType="VarChar(7)" />
+    <Parameter Name="TIPOPEDIDO" Parameter="tIPOPEDIDO" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="USUARIO" Parameter="uSUARIO" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="FECHAREGISTRO" Parameter="fECHAREGISTRO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ASIGNADO" Parameter="aSIGNADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_abmPedidosMaximoResult">
+      <Column Name="MAXIMO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmCtrlTit" Method="sp_abmCtrlTit1">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="CTRL_ID" Parameter="cTRL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TIT_ID" Parameter="tIT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FECHAASIGANACION" Parameter="fECHAASIGANACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="ACTA" Parameter="aCTA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ALTERNO" Parameter="aLTERNO" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="sp_abmCtrlTitResult1">
+      <Column Name="CTRL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAASIGANACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DESDE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HASTA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ACTA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ALTERNO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmActa" Method="sp_abmActa">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ACT_ID" Parameter="aCT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ACTA" Parameter="aCTA" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_abmActaResult">
+      <Column Name="ACTA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_VerHorarios2" Method="sp_VerHorarios2">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_VerHorarios2Result">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AUL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VEH_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cur_nomenclatura" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mat_descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="aul_escuela" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="aul_descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="hor_inicio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="hor_fin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="tal_fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="vehiculo" Type="System.String" DbType="VarChar(202)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cuentaHorariosEducVial" Method="sp_cuentaHorariosEducVial">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_cuentaHorariosEducVialResult">
+      <Column Name="educvial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cuentaHorariosPsicologia" Method="sp_cuentaHorariosPsicologia">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_cuentaHorariosPsicologiaResult">
+      <Column Name="psico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cuentaHorariosMecanica" Method="sp_cuentaHorariosMecanica">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_cuentaHorariosMecanicaResult">
+      <Column Name="mecanica" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cuentaHorariosPrimerosAuxilios" Method="sp_cuentaHorariosPrimerosAuxilios">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_cuentaHorariosPrimerosAuxiliosResult">
+      <Column Name="primaux" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorarioEducacionVial" Method="sp_HorarioEducacionVial">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AULA" Parameter="aULA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HORA" Parameter="hORA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorarioEducacionVialResult">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorarioMecanica" Method="sp_HorarioMecanica">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AULA" Parameter="aULA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HORA" Parameter="hORA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TALLER" Parameter="tALLER" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorarioMecanicaResult">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorarioPractica" Method="sp_HorarioPractica">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEHICULO" Parameter="vEHICULO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HORA" Parameter="hORA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorarioPracticaResult">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorarioPrimerosAuxilios" Method="sp_HorarioPrimerosAuxilios">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AULA" Parameter="aULA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HORA" Parameter="hORA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TALLER" Parameter="tALLER" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorarioPrimerosAuxiliosResult">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorarioPsicologia" Method="sp_HorarioPsicologia">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AULA" Parameter="aULA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HORA" Parameter="hORA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TALLER" Parameter="tALLER" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorarioPsicologiaResult">
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmRegistroAlumno" Method="sp_abmRegistroAlumno">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="REG_ID" Parameter="rEG_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ALU_ID" Parameter="aLU_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_FECHA" Parameter="rEG_FECHA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="REG_OBSERVACION" Parameter="rEG_OBSERVACION" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="REG_FACTURANUMERO" Parameter="rEG_FACTURANUMERO" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="REG_USUARIO" Parameter="rEG_USUARIO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="REG_FECHAMOD" Parameter="rEG_FECHAMOD" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_ESTADO" Parameter="rEG_ESTADO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REG_SUCURSAL" Parameter="rEG_SUCURSAL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PETRI_ID" Parameter="pETRI_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_PETRIRESULTADO" Parameter="rEG_PETRIRESULTADO" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="PED_ID" Parameter="pED_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_NUMPERMISO" Parameter="rEG_NUMPERMISO" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_abmRegistroAlumnoResult">
+      <Column Name="REG_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALU_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REG_OBSERVACION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="REG_FACTURANUMERO" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="REG_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REG_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_ESTADO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REG_SUCURSAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PETRI_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_PETRIRESULTADO" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PED_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REG_NUMPERMISO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmRegistroAlumnoDetalle" Method="sp_abmRegistroAlumnoDetalle">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RDET_ID" Parameter="rDET_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_ID" Parameter="rEG_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ASM_ID" Parameter="aSM_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RDET_OBSERVACION" Parameter="rDET_OBSERVACION" Type="System.String" DbType="VarChar(150)" />
+    <ElementType Name="sp_abmRegistroAlumnoDetalleResult">
+      <Column Name="RDET_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REG_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RDET_OBSERVACION" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmAlumnos" Method="sp_abmAlumnos">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ALU_ID" Parameter="aLU_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ALU_IDENTIFICACION" Parameter="aLU_IDENTIFICACION" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="ALU_APELLIDOS" Parameter="aLU_APELLIDOS" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="ALU_NOMBRES" Parameter="aLU_NOMBRES" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="ALU_DIRECCION" Parameter="aLU_DIRECCION" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="ALU_TELEFONO" Parameter="aLU_TELEFONO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ALU_TIPOSANGRE" Parameter="aLU_TIPOSANGRE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ALU_NACIONALIDAD" Parameter="aLU_NACIONALIDAD" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ALU_ESTADOCIVIL" Parameter="aLU_ESTADOCIVIL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ALU_GENERO" Parameter="aLU_GENERO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ALU_FECHANACIMIENTO" Parameter="aLU_FECHANACIMIENTO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ALU_EMAIL" Parameter="aLU_EMAIL" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ALU_INSTRUCCION" Parameter="aLU_INSTRUCCION" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ALU_TIPOLICENCIA" Parameter="aLU_TIPOLICENCIA" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="ALU_CELULAR" Parameter="aLU_CELULAR" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ALU_FACTURA" Parameter="aLU_FACTURA" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="sp_abmAlumnosResult">
+      <Column Name="ALU_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALU_IDENTIFICACION" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ALU_APELLIDOS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ALU_NOMBRES" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ALU_DIRECCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ALU_TELEFONO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ALU_TIPOSANGRE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ALU_NACIONALIDAD" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ALU_ESTADOCIVIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ALU_GENERO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ALU_FECHANACIMIENTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ALU_EMAIL" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ALU_INSTRUCCION" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ALU_TIPOLICENCIA" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ALU_CELULAR" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ALU_FACTURA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmDatosAcademicos" Method="sp_abmDatosAcademicos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cuhomat" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="mae_suc" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="cliente" Type="System.String" DbType="Char(15)" />
+    <Parameter Name="numero" Type="System.String" DbType="Char(13)" />
+    <Parameter Name="mcurso" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="mae_aul" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="horario" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="horpra" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="horasab" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="tip_con" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="tpcurso" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="mae_veh" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="item" Type="System.String" DbType="Char(15)" />
+    <Parameter Name="nota" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="asistencia" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="permiso" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="titulo" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="acta" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="nombre" Type="System.String" DbType="Char(50)" />
+    <Parameter Name="revdoc" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="psico" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="observa" Type="System.String" DbType="Char(60)" />
+    <Parameter Name="observa2" Type="System.String" DbType="Char(50)" />
+    <Parameter Name="fechapsico" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fecharevis" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechimpper" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="grupoperm" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="estadoest" Type="System.String" DbType="Char(15)" />
+    <Parameter Name="observa3" Type="System.String" DbType="Char(50)" />
+    <Parameter Name="usuario" Type="System.String" DbType="Char(30)" />
+    <Parameter Name="num_pedido" Type="System.String" DbType="Char(15)" />
+    <Parameter Name="cur_pedido" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="edu" Type="System.Decimal" DbType="Decimal(5,0)" />
+    <Parameter Name="pra" Type="System.Decimal" DbType="Decimal(5,0)" />
+    <Parameter Name="mec" Type="System.Decimal" DbType="Decimal(5,0)" />
+    <Parameter Name="pau" Type="System.Decimal" DbType="Decimal(5,0)" />
+    <Parameter Name="psi" Type="System.Decimal" DbType="Decimal(5,0)" />
+    <Parameter Name="nedu" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="npra" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="nmec" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="nacta" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="ntitu" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="s1edu" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="s2edu" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="s1pra" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="s2pra" Type="System.Decimal" DbType="Decimal(4,2)" />
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="obs_pra" Type="System.String" DbType="Char(60)" />
+    <Parameter Name="obs_edu" Type="System.String" DbType="Char(60)" />
+    <Parameter Name="obs_mec" Type="System.String" DbType="Char(60)" />
+    <Parameter Name="obs_pau" Type="System.String" DbType="Char(60)" />
+    <Parameter Name="obs_psi" Type="System.String" DbType="Char(60)" />
+    <Parameter Name="ped_tit" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="reg_acta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="reg_psic" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="reg_ctep" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="reg_docu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="reg_con" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="obs_estadi" Type="System.String" DbType="Char(200)" />
+    <Parameter Name="cur_cierra" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="pago_pcia" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ctrol_titu" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="autza_pago" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="titulado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="cerrado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pagado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="controlado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="serie" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="est_reg" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ano" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="fserie" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="solper" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="feccaduc" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="psic" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="cpt" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="con" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="iacta" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="doc" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="matricula" Type="System.Decimal" DbType="Decimal(10,0)" />
+    <Parameter Name="fechmat" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="seriemat" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="rso" Type="System.String" DbType="Char(100)" />
+    <Parameter Name="factura" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="id" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="habilitado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_abmDatosAcademicosResult">
+      <Column Name="cuhomat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="mae_suc" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="cliente" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="numero" Type="System.String" DbType="Char(13)" CanBeNull="true" />
+      <Column Name="mcurso" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="mae_aul" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horario" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horpra" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horasab" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="tip_con" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="tpcurso" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="mae_veh" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="nota" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="asistencia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="permiso" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="titulo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="acta" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="revdoc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="psico" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="observa" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="observa2" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="fechapsico" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecharevis" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechimpper" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="grupoperm" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="estadoest" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="observa3" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="num_pedido" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="cur_pedido" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="edu" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="pra" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="mec" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="pau" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="psi" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="nedu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="npra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="nmec" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="nacta" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="ntitu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s1edu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s2edu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s1pra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s2pra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="obs_pra" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_edu" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_mec" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_pau" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_psi" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="ped_tit" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="reg_acta" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_psic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_ctep" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_docu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_con" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="obs_estadi" Type="System.String" DbType="Char(200)" CanBeNull="true" />
+      <Column Name="cur_cierra" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pago_pcia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ctrol_titu" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="autza_pago" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="titulado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cerrado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pagado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="controlado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="serie" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="est_reg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ano" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="fserie" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="solper" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="feccaduc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="psic" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cpt" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="con" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="iacta" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="doc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="matricula" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="fechmat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="seriemat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="rso" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="factura" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="habilitado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ConsultaHorariosPractica" Method="sp_ConsultaHorariosPractica">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="FECHAINI" Parameter="fECHAINI" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FECHAFIN" Parameter="fECHAFIN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HORAINI" Parameter="hORAINI" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="HORAFIN" Parameter="hORAFIN" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ConsultaHorariosPracticaResult">
+      <Column Name="SUCURSAL" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="ESC_DESCRIPCION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ESC_DIRECCION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CUR_NOMENCLATURA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NUMAUTO" Type="System.String" DbType="VarChar(202)" CanBeNull="true" />
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmTitulos" Method="sp_abmTitulos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TIT_ID" Parameter="tIT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SERIE_DEL" Parameter="sERIE_DEL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SERIE_AL" Parameter="sERIE_AL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ALTERNO" Parameter="aLTERNO" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="ULTNUMASIGNADO" Parameter="uLTNUMASIGNADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="COMPLETO" Parameter="cOMPLETO" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_abmTitulosResult">
+      <Column Name="TIT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SERIE_DEL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SERIE_AL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ALTERNO" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ULTNUMASIGNADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMPLETO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorariosAsignadosAulas" Method="sp_HorariosAsignadosAulas">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MATERIA" Parameter="mATERIA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorariosAsignadosAulasResult">
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AUL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AUL_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorariosAsignadosHoras" Method="sp_HorariosAsignadosHoras">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MATERIA" Parameter="mATERIA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorariosAsignadosHorasResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HOR_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorariosAsignadosTalleres" Method="sp_HorariosAsignadosTalleres">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MATERIA" Parameter="mATERIA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorariosAsignadosTalleresResult">
+      <Column Name="TAL_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TAL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TAL_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorariosAsignadosXMateria" Method="sp_HorariosAsignadosXMateria">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MATERIA" Parameter="mATERIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AULA" Parameter="aULA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HORA" Parameter="hORA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorariosAsignadosXMateriaResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="HOR_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorariosAsignadosXAuto" Method="sp_HorariosAsignadosXAuto">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MATERIA" Parameter="mATERIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUTO" Parameter="aUTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HORA" Parameter="hORA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorariosAsignadosXAutoResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HOR_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VEHICULO" Type="System.String" DbType="VarChar(202)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_consultarDatosAcademicos" Method="sp_consultarDatosAcademicos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cliente" Type="System.String" DbType="Char(15)" />
+    <Parameter Name="rso" Type="System.String" DbType="Char(100)" />
+    <ElementType Name="sp_consultarDatosAcademicosResult">
+      <Column Name="cuhomat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="mae_suc" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="cliente" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="numero" Type="System.String" DbType="Char(13)" CanBeNull="true" />
+      <Column Name="mcurso" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="mae_aul" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horario" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horpra" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horasab" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="tip_con" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="tpcurso" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="mae_veh" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="nota" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="asistencia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="permiso" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="titulo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="acta" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="revdoc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="psico" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="observa" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="observa2" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="fechapsico" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecharevis" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechimpper" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="grupoperm" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="estadoest" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="observa3" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="num_pedido" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="cur_pedido" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="edu" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="pra" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="mec" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="pau" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="psi" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="nedu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="npra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="nmec" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="nacta" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="ntitu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s1edu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s2edu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s1pra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s2pra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="obs_pra" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_edu" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_mec" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_pau" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_psi" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="ped_tit" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="reg_acta" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_psic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_ctep" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_docu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_con" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="obs_estadi" Type="System.String" DbType="Char(200)" CanBeNull="true" />
+      <Column Name="cur_cierra" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pago_pcia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ctrol_titu" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="autza_pago" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="titulado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cerrado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pagado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="controlado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="serie" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="est_reg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ano" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="fserie" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="solper" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="feccaduc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="psic" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cpt" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="con" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="iacta" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="doc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="matricula" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="fechmat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="seriemat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="rso" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="factura" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="habilitado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmRegistroNota_Con" Method="sp_abmRegistroNota_Con">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RNOTC_ID" Parameter="rNOTC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_ID" Parameter="rEG_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_CIRUC" Parameter="rNOTC_CIRUC" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_APELLIDOS" Parameter="rNOTC_APELLIDOS" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_NOMBRES" Parameter="rNOTC_NOMBRES" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_LICENCIA" Parameter="rNOTC_LICENCIA" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_EDUC_VIAL_ASIS" Parameter="rNOTC_EDUC_VIAL_ASIS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_EDUC_VIAL_NOTA" Parameter="rNOTC_EDUC_VIAL_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RNOTC_EDUC_VIAL_SUP1" Parameter="rNOTC_EDUC_VIAL_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RNOTC_EDUC_VIAL_SUP2" Parameter="rNOTC_EDUC_VIAL_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RNOTC_EDUC_VIAL_ESTA" Parameter="rNOTC_EDUC_VIAL_ESTA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_PRAC_ASIS" Parameter="rNOTC_PRAC_ASIS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_PRAC_NOTA" Parameter="rNOTC_PRAC_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RNOTC_PRAC_SUP1" Parameter="rNOTC_PRAC_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RNOTC_PRAC_SUP2" Parameter="rNOTC_PRAC_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RNOTC_PRAC_ESTA" Parameter="rNOTC_PRAC_ESTA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_PSIC_ASIS" Parameter="rNOTC_PSIC_ASIS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_PSIC_ESTA" Parameter="rNOTC_PSIC_ESTA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_PAUX_ASIS" Parameter="rNOTC_PAUX_ASIS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_PAUX_ESTA" Parameter="rNOTC_PAUX_ESTA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_MEC_ASIS" Parameter="rNOTC_MEC_ASIS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_MEC_ESTA" Parameter="rNOTC_MEC_ESTA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_PETR_ESTA" Parameter="rNOTC_PETR_ESTA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_FACT" Parameter="rNOTC_FACT" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="RNOTC_FACT_ESTA" Parameter="rNOTC_FACT_ESTA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_APROBADO" Parameter="rNOTC_APROBADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_OP1" Parameter="rNOTC_OP1" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_OP3" Parameter="rNOTC_OP3" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_OP4" Parameter="rNOTC_OP4" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_OP5" Parameter="rNOTC_OP5" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_OP6" Parameter="rNOTC_OP6" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_OP7" Parameter="rNOTC_OP7" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_OBSERVACIONES" Parameter="rNOTC_OBSERVACIONES" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="RNOTC_USU_MODIFICA" Parameter="rNOTC_USU_MODIFICA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_PEDIDO_TITULOS" Parameter="rNOTC_PEDIDO_TITULOS" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="RNOTC_TITULO" Parameter="rNOTC_TITULO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_ACTA" Parameter="rNOTC_ACTA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RNOTC_CONFIRMACION" Parameter="rNOTC_CONFIRMACION" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_ENVIADO" Parameter="rNOTC_ENVIADO" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_abmRegistroNota_ConResult">
+      <Column Name="RNOTC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REG_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_CIRUC" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="RNOTC_APELLIDOS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RNOTC_NOMBRES" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RNOTC_LICENCIA" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PSIC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PSIC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PAUX_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PAUX_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_MEC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_MEC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PETR_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_FACT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RNOTC_FACT_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_APROBADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_OP1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP3" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP4" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP5" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP6" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP7" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OBSERVACIONES" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RNOTC_USU_MODIFICA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PEDIDO_TITULOS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RNOTC_TITULO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_ACTA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RNOTC_CONFIRMACION" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_ENVIADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_actualizaRegistroNota_Con" Method="sp_actualizaRegistroNota_Con">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RNOTC_ID" Parameter="rNOTC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REG_ID" Parameter="rEG_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_CIRUC" Parameter="rNOTC_CIRUC" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_APELLIDOS" Parameter="rNOTC_APELLIDOS" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_NOMBRES" Parameter="rNOTC_NOMBRES" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="RNOTC_OBSERVACIONES" Parameter="rNOTC_OBSERVACIONES" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="RNOTC_USU_MODIFICA" Parameter="rNOTC_USU_MODIFICA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_PEDIDO_TITULOS" Parameter="rNOTC_PEDIDO_TITULOS" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="RNOTC_TITULO" Parameter="rNOTC_TITULO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RNOTC_ACTA" Parameter="rNOTC_ACTA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RNOTC_CONFIRMACION" Parameter="rNOTC_CONFIRMACION" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="RNOTC_ENVIADO" Parameter="rNOTC_ENVIADO" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_actualizaRegistroNota_ConResult">
+      <Column Name="RNOTC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RNOTC_CIRUC" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="RNOTC_APELLIDOS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RNOTC_NOMBRES" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PedidoTitulos_NumRegistros" Method="sp_PedidoTitulos_NumRegistros">
+    <Parameter Name="accion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="cur_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pedido" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="sp_PedidoTitulos_NumRegistrosResult">
+      <Column Name="numReg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PedidoTitulos" Method="sp_PedidoTitulos">
+    <Parameter Name="accion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="cur_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pedido" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="sp_PedidoTitulosResult">
+      <Column Name="NO" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RNOTC_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REG_SUCURSAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CUR_NOMENCLATURA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUR_FECHA_INICIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CUR_FECHA_FIN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ALUMNO" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+      <Column Name="RNOTC_CIRUC" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="REG_FACTURANUMERO" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="MATRICULA" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="PERMISO" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="RNOTC_EDUC_VIAL_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEC_NOTA" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MEC_SUP1" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MEC_SUP2" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="RNOTC_MEC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAUX_NOTA" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PAUX_SUP1" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PAUX_SUP2" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="RNOTC_PAUX_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PSIC_NOTA" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PSIC_SUP1" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PSIC_SUP2" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="RNOTC_PSIC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_APROBADO" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TITULO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_OBSERVACIONES" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RNOTC_PEDIDO_TITULOS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="alu_email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="RNOTC_CONFIRMACION" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_asignaTitulos" Method="sp_asignaTitulos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ACTA" Parameter="aCTA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PEDIDO" Parameter="pEDIDO" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cuentaAsignaTitulos" Method="sp_cuentaAsignaTitulos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ACTA" Parameter="aCTA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PEDIDO" Parameter="pEDIDO" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="sp_cuentaAsignaTitulosResult">
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_consultarHistoricos" Method="sp_consultarHistoricos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cliente" Type="System.String" DbType="Char(15)" />
+    <Parameter Name="rso" Type="System.String" DbType="Char(100)" />
+    <ElementType Name="sp_consultarHistoricosResult">
+      <Column Name="cuhomat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="mae_suc" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="cliente" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="numero" Type="System.String" DbType="Char(13)" CanBeNull="true" />
+      <Column Name="mcurso" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="mae_aul" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horario" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horpra" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="horasab" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="tip_con" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="tpcurso" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="mae_veh" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="nota" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="asistencia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="permiso" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="titulo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="acta" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="revdoc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="psico" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="observa" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="observa2" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="fechapsico" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecharevis" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechimpper" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="grupoperm" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="estadoest" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="observa3" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="num_pedido" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="cur_pedido" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="edu" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="pra" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="mec" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="pau" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="psi" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="nedu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="npra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="nmec" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="nacta" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="ntitu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s1edu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s2edu" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s1pra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="s2pra" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="obs_pra" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_edu" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_mec" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_pau" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="obs_psi" Type="System.String" DbType="Char(60)" CanBeNull="true" />
+      <Column Name="ped_tit" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="reg_acta" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_psic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_ctep" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_docu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="reg_con" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="obs_estadi" Type="System.String" DbType="Char(200)" CanBeNull="true" />
+      <Column Name="cur_cierra" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pago_pcia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ctrol_titu" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="autza_pago" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="titulado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cerrado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pagado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="controlado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="serie" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="est_reg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ano" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="fserie" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="solper" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="feccaduc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="psic" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cpt" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="con" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="iacta" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="doc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="matricula" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="fechmat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="seriemat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="rso" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_consultarEstudianteCon" Method="sp_consultarEstudianteCon">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="RNOTC_CIRUC" Parameter="rNOTC_CIRUC" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="NOMBRES" Parameter="nOMBRES" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_consultarEstudianteConResult">
+      <Column Name="RNOTC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REG_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_CIRUC" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="RNOTC_APELLIDOS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RNOTC_NOMBRES" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RNOTC_LICENCIA" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CUR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CURSOANT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUR_ID_REAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CURSOREAL" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_EDUC_VIAL_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_NOTA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP1" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_SUP2" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_PRAC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PSIC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PSIC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PAUX_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PAUX_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_MEC_ASIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_MEC_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_PETR_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_FACT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="RNOTC_FACT_ESTA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_APROBADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_OP1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP3" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP4" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP5" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP6" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OP7" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RNOTC_OBSERVACIONES" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RNOTC_USU_MODIFICA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_PEDIDO_TITULOS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RNOTC_TITULO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RNOTC_ACTA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RNOTC_CONFIRMACION" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RNOTC_ENVIADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmHorario" Method="sp_abmHorario">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ESC_ID" Parameter="eSC_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_INICIO" Parameter="hOR_INICIO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="HOR_FIN" Parameter="hOR_FIN" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="HOR_ESTADO" Parameter="hOR_ESTADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HOR_USUARIO" Parameter="hOR_USUARIO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="HOR_FECHAMOD" Parameter="hOR_FECHAMOD" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="NChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_abmHorarioResult">
+      <Column Name="HOR_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ESC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HOR_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HOR_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="MOD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmAuto_escuela" Method="sp_abmAuto_escuela">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="VEH_MARCA" Parameter="vEH_MARCA" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_MODELO" Parameter="vEH_MODELO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_ANIO" Parameter="vEH_ANIO" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Parameter Name="VEH_NUMERO" Parameter="vEH_NUMERO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_CHASIS" Parameter="vEH_CHASIS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_MOTOR" Parameter="vEH_MOTOR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="VEH_PLACA" Parameter="vEH_PLACA" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SUC_ID" Parameter="sUC_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="VEH_ACTIVO" Parameter="vEH_ACTIVO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="VEH_FECHA_CREACION" Parameter="vEH_FECHA_CREACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="VEH_FECHA_ACTUALIZA" Parameter="vEH_FECHA_ACTUALIZA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="US_ID_CREACION" Parameter="uS_ID_CREACION" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="US_ID_ACTUALIZA" Parameter="uS_ID_ACTUALIZA" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="VEH_OBSERVACION" Parameter="vEH_OBSERVACION" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <ElementType Name="sp_abmAuto_escuelaResult">
+      <Column Name="VEH_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="VEH_MARCA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MODELO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_ANIO" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="VEH_NUMERO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_CHASIS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MOTOR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_PLACA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SUC_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VEH_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VEH_FECHA_CREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VEH_FECHA_ACTUALIZA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="US_ID_CREACION" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="US_ID_ACTUALIZA" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="numplaca" Type="System.String" DbType="VarChar(203)" CanBeNull="true" />
+      <Column Name="VEH_ID1" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="VEH_MARCA1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MODELO1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_ANIO1" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="VEH_NUMERO1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_CHASIS1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MOTOR1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_PLACA1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SUC_ID1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VEH_ACTIVO1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VEH_FECHA_CREACION1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VEH_FECHA_ACTUALIZA1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="US_ID_CREACION1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="US_ID_ACTUALIZA1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VEH_OBSERVACION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cuentaHorariosPractica" Method="sp_cuentaHorariosPractica">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_cuentaHorariosPracticaResult">
+      <Column Name="practica" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_imprimirTitulos" Method="sp_imprimirTitulos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PEDIDO" Parameter="pEDIDO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_imprimirTitulosResult">
+      <Column Name="reg_numpermiso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="alumno" Type="System.String" DbType="NVarChar(201)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.String" DbType="NVarChar(94)" CanBeNull="true" />
+      <Column Name="cur_nomenclatura" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="rnotc_acta" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="rnotc_prac_nota" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RNOTC_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_HorariosAsignadosVehiculos" Method="sp_HorariosAsignadosVehiculos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CURSO" Parameter="cURSO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MATERIA" Parameter="mATERIA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_HorariosAsignadosVehiculosResult">
+      <Column Name="VEHICULO" Type="System.String" DbType="VarChar(202)" CanBeNull="true" />
+      <Column Name="VEH_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VEH_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DisponibilidadEducacionVial" Method="sp_DisponibilidadEducacionVial">
+    <Parameter Name="accion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="curso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modalidad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_DisponibilidadEducacionVialResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DisponibilidadPractica" Method="sp_DisponibilidadPractica">
+    <Parameter Name="accion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="curso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modalidad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_DisponibilidadPracticaResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="VEHICULO" Type="System.String" DbType="VarChar(305)" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DisponibilidadPrimerosAuxilios" Method="sp_DisponibilidadPrimerosAuxilios">
+    <Parameter Name="accion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="curso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modalidad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_DisponibilidadPrimerosAuxiliosResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TAL_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DisponibilidadPsicologia" Method="sp_DisponibilidadPsicologia">
+    <Parameter Name="accion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="curso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modalidad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_DisponibilidadPsicologiaResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TAL_FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DisponibilidadMecanica" Method="sp_DisponibilidadMecanica">
+    <Parameter Name="accion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="curso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="modalidad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_DisponibilidadMecanicaResult">
+      <Column Name="HOR_INICIO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HOR_FIN" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AUL_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ASM_DISPONIBLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASM_REGISTRADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAL_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_abmMateria" Method="sp_abmMateria">
+    <Parameter Name="Accion" Parameter="accion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_DESCRIPCION" Parameter="mAT_DESCRIPCION" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="MAT_VALOR" Parameter="mAT_VALOR" Type="System.Decimal" DbType="Decimal(10,4)" />
+    <Parameter Name="MAT_USUARIO" Parameter="mAT_USUARIO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MAT_FECHAMOD" Parameter="mAT_FECHAMOD" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_abmMateriaResult">
+      <Column Name="MAT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAT_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MAT_VALOR" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="MAT_USUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAT_FECHAMOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_generaHorarios2" Method="sp_generaHorarios2">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="MOD_ID" Parameter="mOD_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CUR_ID" Parameter="cUR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAT_ID" Parameter="mAT_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AUL_ID" Parameter="aUL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VEH_ID" Parameter="vEH_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOR_ID" Parameter="hOR_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TAL_ID" Parameter="tAL_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,333 @@
+﻿@charset "UTF-8";
+:root {
+  --color-first: #007BDF;
+  --color-border: #DFE0E0;
+  --color-alert: #FF3C32; }
+
+:root {
+  --tomateAneta: #f79a36;
+  --tomateAnetaChat: #ff5000;
+  --azulAneta: #094697;
+  --amarilloAnetaLogo: #fff000;
+  --azulAnetaLogo: #00469b;
+  --rojoAnetaLogo: #ff151f;
+  --darkAneta: #2d2d2d;
+  --blancoAneta: #FEF5EB;
+  --azulAnetaCortina: #247ab7;
+  --azulAnetaOscuro: #002e69;
+  --textAneta: #555; }
+
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000; }
+
+:root {
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --body-font-size: .9rem;
+  --small-font-size: .75rem; }
+  @media screen and (min-width: 960px) {
+    :root {
+      --h1-font-size: 2.5rem;
+      --h2-font-size: 1.75rem;
+      --h3-font-size: 1.5rem;
+      --body-font-size: 1rem;
+      --small-font-size: .8rem; } }
+
+
+
+/*@import "layout/layout";*/
+.titulo3 {
+    border-bottom: 1px solid var(--tomateAneta);
+    color:var(--azulAneta);
+}
+
+.header-activarCurso {
+    grid-area:header-activarCurso;
+}
+
+.main-principalActivarCurso {
+    
+    grid-area:main-principalActivarCurso;
+
+}
+
+.footer-activarCurso {
+    grid-area:footer-activarCurso;
+}
+
+
+
+.main-activarCurso {
+    /*position: relative;*/
+    /*top: 4.0rem;*/
+
+    margin-top:0;
+    min-width: 90vw;
+    min-height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "header-activarCurso" "main-principalActivarCurso" "footer-activarCurso";
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem auto 4rem;
+    grid-gap: 0.5rem;
+ }
+
+/*MENSAJES*/
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+  display:block;
+  width: 80vw;
+ text-align:center;
+ font-size:1rem;
+}
+
+
+/*SELECTS*/
+
+.areaSelects {
+    grid-area:areaSelects ;
+}
+
+.areaHorarios {
+    grid-area:areaHorarios ;
+}
+
+.areaBotones {
+    grid-area:areaBotones  ;
+}
+
+.areaAsignados {
+    grid-area:areaAsignados ;
+}
+
+.areaAsignados {
+    grid-area:areaAsignados;
+}
+
+
+
+
+.main-principalActivarCurso {
+    width:80%;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "areaSelects" "areaHorarios" "areaBotones" "areaAsignados";
+    grid-template-columns:auto;
+    grid-template-rows: auto auto auto auto;
+    grid-gap:0.5rem;
+}
+
+@media screen and (min-width: 767px) {
+    .areaActivarCurso {
+      grid-template-areas: "areaSelects areaSelects areaHorarios areaHorarios  areaHorarios areaHorarios"
+                             "areaBotones areaBotones areaBotones areaBotones areaBotones areaBotones"
+                             "areaAsignados areaAsignados areaAsignados areaAsignados areaAsignados areaAsignados";
+      
+
+
+      -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+       grid-template-rows: auto auto auto;
+     }
+}
+
+.horariosDisponibles__item {
+  width:80%;
+  padding-left: 0.2rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  -ms-flex-line-pack: top;
+  align-content: top; 
+  }
+
+.containerSelect {
+
+}
+
+.mainSelect {
+  margin-bottom: 0.7rem;
+}
+
+
+.mainSelect__item {
+ /* margin-left:1rem;*/
+  background-color: #002e69;
+  color: #FEF5EB;
+  font-weight: 700;
+  padding: 1rem;
+  width: 80%;
+  border: none;
+  font-size: 0.8rem;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  outline: none; }
+
+@media screen and (min-width: 767px) {
+    .mainSelect__item {
+      font-size: 0.8rem;
+      width: 80%; }
+}
+@media screen and (min-width: 950px) {
+    .mainSelect__item {
+      font-size: 1.0rem;
+      width: 80%; }
+}
+
+
+.mainSelect__item::before {
+    content:"/h";
+    color: green; /*rgba(255, 255, 255, 0.6);*/
+    background-color: white;
+}
+
+.mainSelect__item:hover::before {
+  color: green;/*rgba(255, 255, 255, 0.6);*/
+  background-color:white; /*rgba(255, 255, 255, 0.2);*/
+}
+
+.mainSelect.mainSelect__item.option {
+  padding: 60px;
+}
+
+
+/*LISTADO DE HORARIOS*/
+.areaAutos {
+    grid-area:areaAutos;
+}
+
+.areaAulas {
+    grid-area:areaAulas;
+}
+
+.areaHoras {
+    grid-area:areaHoras;
+}
+
+.areaDias {
+    grid-area:areaDias;
+}
+
+
+
+.contieneHorasDisponibles {
+
+
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas: "areaAutos" "areaAulas" "areaHoras" "areaDias";
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+}
+
+@media screen and (min-width: 767px) {
+    .contieneHorasDisponibles {
+        grid-template-areas: "areaAutos areaAulas areaHoras areaDias";
+        -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+
+/*BOTONERA*/
+
+.buttonHolder {
+    display:flex;
+
+  /*  background-color:var(--azulAnetaCortina);*/
+
+}
+  @media screen and (min-width: 767px) {
+    .buttonHolder {
+    }
+  }
+.button {
+  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f1ee), to(#fff));
+  background-image: -o-linear-gradient(top, #f4f1ee, #fff);
+  background-image: linear-gradient(top, #f4f1ee, #fff);
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  height: 4.2rem;
+  margin: 20px 15px 20px 5px;
+  width: 4.2rem;
+  -webkit-transition: all .1s linear;
+  -o-transition: all .1s linear;
+  transition: all .1s linear; 
+}
+
+
+.button:hover {
+  background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f4f1ee));
+  background-image: -o-linear-gradient(top, #fff, #f4f1ee);
+  background-image: linear-gradient(top, #fff, #f4f1ee);
+  color: #0088cc; 
+  height: 4.2rem;
+  width: 4.2rem;
+}
+
+
+.button:active {
+  background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#efedec), to(#f7f4f4));
+  background-image: -o-linear-gradient(top, #efedec, #f7f4f4);
+  background-image: linear-gradient(top, #efedec, #f7f4f4);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4), inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4), inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+
+.button:active:after {
+  color: #dbd2d2;
+  text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px #2d2d2d; }
+
+.button-title {
+  color: #e9e6e4;
+  content: "";
+  font-size: 0.8rem;
+  height: 3.2rem;
+  text-decoration: none;
+  text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+  width: 3.2rem;
+}
+  @media screen and (min-width: 767px) {
+    .button-title {
+      left: 0rem;
+      font-size: 0.8rem;
+    } 
+  }
+
+.button-title:hover {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+
+
+
+
+.noDesplegar {
+    display:none;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AdmBitaAuto" Class="Data_AdmBitaAutoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=UIODBSERVER\ANETA;Initial Catalog=AdmBitaAuto;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AdmBitaAutoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SUCURSAL" Member="SUCURSAL">
+    <Type Name="SUCURSAL">
+      <Column Name="SUC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SUC_DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="SUCURSAL_VEHICULO" Member="VEHICULO" ThisKey="SUC_ID" OtherKey="SUC_ID" Type="VEHICULO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VEHICULO" Member="VEHICULO">
+    <Type Name="VEHICULO">
+      <Column Name="VEH_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VEH_MARCA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MODELO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_ANIO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VEH_NUMERO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_CHASIS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_MOTOR" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEH_PLACA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SUC_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TVE_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PER_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VEH_ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SUCURSAL_VEHICULO" Member="SUCURSAL" ThisKey="SUC_ID" OtherKey="SUC_ID" Type="SUCURSAL" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

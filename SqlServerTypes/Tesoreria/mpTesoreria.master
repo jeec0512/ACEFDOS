@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpTesoreria.master.cs"
+    Inherits="Tesoreria_mpTesoreria" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+    <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lRecaudacion" CssClass="gradientSub" runat="server" NavigateUrl="~/Tesoreria/registrarRecaudacion.aspx">Registrar recaudación</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lCierreVentas" CssClass="gradientSub" runat="server" NavigateUrl="~/Tesoreria/cierreVentas.aspx">Cierre de ventas</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lControlVentas" CssClass="gradientSub" runat="server" NavigateUrl="~/Tesoreria/controlCajasVentas.aspx">Control de ventas</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lReporteTesoreria" CssClass="gradientSub" runat="server" NavigateUrl="~/Tesoreria/reportesTesoreria.aspx">Reporte de tesorería</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lCorrientes" CssClass="gradientSub" runat="server" NavigateUrl="~/Tesoreria/corrientes.aspx">Corrientes</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lIngresosEgresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Tesoreria/ingresosEgresos.aspx">Ingresos y egresos</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lClienteCXC" CssClass="gradientSub" runat="server" NavigateUrl="~/Tesoreria/registrarClienteCXC.aspx">Registro clientes a CXC</asp:HyperLink>
+                </li>
+            </ul>
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

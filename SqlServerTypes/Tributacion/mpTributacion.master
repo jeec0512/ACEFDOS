@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpTributacion.master.cs"
+    Inherits="Tributacion_mpTributacion" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+    <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lAnexoSri" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/ats.aspx">Documento ATS</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lAnexoSri2" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/ats2.aspx">Documento ATS2</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lAnexoSri3" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/ats3.aspx">Documento ATS3</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lControlRetencion" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/controlRetencion.aspx">Control ATS</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lDocumentoNova" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/documentoNova.aspx">Documentos del NOVA</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lFacEmitNac" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/facturasEmitidasNacional.aspx">Facturas emitidas nacional</asp:HyperLink>
+                </li>
+            </ul>
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

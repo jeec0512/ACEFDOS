@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="valija" Class="DataValijaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=UIODBSERVER\ANETA;Initial Catalog=valija;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="valijaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_cabValija" Member="tbl_cabValija">
+    <Type Name="tbl_cabValija">
+      <Column Name="id_cabValija" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sucOrigen" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="numero" Type="System.String" DbType="NChar(13)" CanBeNull="true" />
+      <Column Name="fechaEnvio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaRecepcion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cedulaEmisor" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="cedulaReceptor" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="NChar(25)" CanBeNull="true" />
+      <Column Name="enviado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="recibido" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ingresa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="despacha" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_detValija" Member="tbl_detValija">
+    <Type Name="tbl_detValija">
+      <Column Name="id_detValija" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_cabValija" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sucDestino" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="departamento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cedulaEntrega" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="numeroGuia" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="descripcionEnvio" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="descripcionRecibe" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="entregado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

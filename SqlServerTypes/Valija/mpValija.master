@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpValija.master.cs" Inherits="Valija_mpValija" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+    <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lEnviarValija" CssClass="gradientSub" runat="server" NavigateUrl="~/Valija/enviarValija.aspx">Enviar valija</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lRecibirValija" CssClass="gradientSub" runat="server" NavigateUrl="~/Valija/recibirValija.aspx">Recibir valija</asp:HyperLink>
+                </li>
+            </ul>
+           
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

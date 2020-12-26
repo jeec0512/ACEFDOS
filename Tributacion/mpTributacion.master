@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpTributacion.master.cs"
+    Inherits="Tributacion_mpTributacion" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+   <style>
+			.main-hamb {
+				width: 100%;
+				background: #4e94ab;
+				
+			}
+
+			.btn-menu {
+				display: none;
+			}
+
+			.main-hamb .lblHamb {
+				display: block;
+				width: 30px;
+				height: 30px;
+				padding: 10px;
+				border-right: 1px solid #fff;
+			}
+
+			.main-hamb .lblHamb:hover {
+				cursor: pointer;
+				background: rgba(0,0,0,0.3);
+			}
+
+			.main-nav  {
+				z-index:0;
+			}
+			
+			.main-nav .main-menu {
+				position: absolute;
+				z-index:99;
+				background: #4e94ab;
+				margin: 0;
+				list-style: none;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				width: 30%;
+				margin-left: -70%;
+				transition: all 0.5s;
+			}
+
+			.main-nav .main-menu li {
+				border-right: 1px solid #fff;
+			}
+
+			.main-nav .main-menu li:hover {
+				background: rgba(0,0,0,0.3);
+			}
+
+			.main-nav .main-menu li a {
+				display: block;
+				padding: 15px 15px;
+				color: #fff;
+				text-decoration: none;
+				font-size: medium;
+			}
+
+			.btn-menu:checked ~ .main-nav .main-menu {
+				margin: 0;
+			}
+			
+		</style>
+    <div class="main-hamb">
+        <input type="checkbox" id="btn-menu" class="btn-menu" />
+        <label for="btn-menu" class="lblHamb">
+            <img src="../images/iconos/hamb.png" alt="Menú" />
+        </label>
+        
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <li>
+                    <asp:HyperLink ID="lAnexoSri" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/ats.aspx">Documento ATS</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lAnexoSri2" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/ats2.aspx">Documento ATS2</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lAnexoSri3" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/ats3.aspx">Documento ATS3</asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="HyperLink1" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/ats4.aspx">Documentos con retención </asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="HyperLink2" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/sinRet.aspx">Egresos sin retención</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lControlRetencion" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/controlRetencion.aspx">Control ATS</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lDocumentoNova" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/documentoNova.aspx">Documentos del NOVA</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lFacEmitNac" CssClass="gradientSub" runat="server" NavigateUrl="~/Tributacion/facturasEmitidasNacional.aspx">Facturas emitidas nacional</asp:HyperLink>
+                </li>
+            </ul>
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

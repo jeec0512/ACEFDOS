@@ -1,0 +1,240 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpEscuela.master.cs" Inherits="Escuela_mpEscuela" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+    <style>
+			.main-hamb {
+				width: 100%;
+				background: #4e94ab;
+				
+			}
+
+			.btn-menu {
+				display: none;
+			}
+
+			.main-hamb .lblHamb {
+				display: block;
+				width: 30px;
+				height: 30px;
+				padding: 10px;
+				border-right: 1px solid #fff;
+			}
+
+			.main-hamb .lblHamb:hover {
+				cursor: pointer;
+				background: rgba(0,0,0,0.3);
+			}
+
+			.main-nav  {
+				z-index:0;
+			}
+			
+			.main-nav .main-menu {
+				position: absolute;
+				z-index:99;
+				background: #4e94ab;
+				margin: 0;
+				list-style: none;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				width: 30%;
+				margin-left: -70%;
+				transition: all 0.5s;
+			}
+
+			.main-nav .main-menu li {
+				border-right: 1px solid #fff;
+			}
+
+			.main-nav .main-menu li:hover {
+				background: rgba(0,0,0,0.3);
+			}
+
+			.main-nav .main-menu li a {
+				display: block;
+				padding: 15px 15px;
+				color: #fff;
+				text-decoration: none;
+				font-size: medium;
+			}
+
+			.btn-menu:checked ~ .main-nav .main-menu {
+				margin: 0;
+			}
+			
+		</style>
+    <div class="main-hamb">
+        <input type="checkbox" id="btn-menu" class="btn-menu" />
+        <label for="btn-menu" class="lblHamb">
+            <img src="../images/iconos/hamb.png" alt="Menú" />
+        </label>
+        
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <li>
+                    <asp:HyperLink ID="lEvaAnt2019" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/evaluacion_ant_2019.aspx">Evaluación ANT 2019</asp:HyperLink>
+                </li>
+				
+                <li>
+                    <asp:HyperLink ID="lCursosFacturados" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/cursosFacturados.aspx">Cursos facturados</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lCreacionDeCupos" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/creacionHorarios2.aspx">Creación de cupos</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lInscripcionEstudiante" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/diego1.aspx">Inscripción de estudiantes</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lPensumAcademico" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/pensumAcademico.aspx">Pensum académico</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lCtrlEstudiantil" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/controlEstudiantil.aspx">Control estudiantil</asp:HyperLink>
+                </li>
+				<li>
+                    <asp:HyperLink ID="lSupervisores" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/supervisores.aspx">Ingreso de notas</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lPostergacion" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/menorEdad.aspx">Postergaciones</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lAnexo3" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/anexo3.aspx">ANEXO 3</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="HyperLink144" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/consultas.aspx">CONSULTAS</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lGeneracionPedidotitulos" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/pedidoTitulos.aspx">Generación de pedido de títulos</asp:HyperLink>
+                </li>
+				<li>
+                    <asp:HyperLink ID="lImpresionTitulos" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/impresionTitulos.aspx">Impresión de títulos</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lNotificacionestudiante" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/envioEmailTitulos.aspx">Notificación a estudiantes </asp:HyperLink>
+                </li>
+            
+                <!--<li>
+                    <asp:HyperLink ID="lImpresion2" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/diego2.aspx">Impresión 2</asp:HyperLink>
+                </li>-->
+            
+                <li>
+                    <asp:HyperLink ID="lrecuperacionPuntos" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/recuperacionPuntos.aspx">Recuperación de puntos</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lCertificadoSicopractico" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/certificadoSicopractico.aspx">Certificado Psicopráctico</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lReporteCertificadoSicopractico" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/reporteSicoPracticos.aspx">Reporte/Certif/Psicoprácticos</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lVerificarCertificadoSicopractico" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/verificarCertificado.aspx">Verificar/Certif/Psicoprácticos</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lDisponibilidadHorarios" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/disponibilidadHorarios.aspx">Horarios disponibles</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lDisponibilidadAutos2" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/disponibilidadAutos2.aspx">Disponibilidad de horarios prácticos</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lReporteNotas" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/refuerzos.aspx">Reporte notas</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lListasEstudiante" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/listadoEstudiantes.aspx">Listados</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lImprimirActas" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/actaGrado.aspx">Imp.Actas de grado</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lAnularPermisos" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/anulaPedidoPermisos.aspx">Anular pedido de permisos</asp:HyperLink>
+                </li>
+            
+                <li>
+                    <asp:HyperLink ID="lAnularTitulos" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/anulaPedidoTitulos.aspx">Anular pedido de títulos</asp:HyperLink>
+                </li>
+				
+				
+            </ul>
+             <!--
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink13" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/disponibilidadAutos.aspx">Disponibilidad de autos</asp:HyperLink>
+                </li>
+            </ul>
+            -->
+
+            <!--     
+            
+	
+           
+                <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink15" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/hds2.aspx">handSomeTable</asp:HyperLink>
+                </li>
+            </ul>
+            
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink6" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/registroNotas.aspx">Registro de notas</asp:HyperLink>
+                </li>
+            </ul>
+           
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink18" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/ingresoNotas.aspx">Ingresar notas</asp:HyperLink>
+                </li>
+            </ul>
+
+             
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink19" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/multiplesFilas.aspx">multiples filas</asp:HyperLink>
+                </li>
+            </ul>
+
+           <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink14" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/horariosAsignados.aspx">Horario asignados</asp:HyperLink>
+                </li>
+            </ul>
+            -->
+            <!--
+
+            
+            
+            
+     
+    -->
+            <!--
+            
+            -->
+        </nav>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

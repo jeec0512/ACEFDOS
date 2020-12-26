@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="temporalrace" Class="Data_TemporalRaceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=UIODBSERVER\ANETA;Initial Catalog=temporalrace;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="temporalraceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.socios_vehiculos" Member="socios_vehiculos">
+    <Type Name="socios_vehiculos">
+      <Column Name="codveh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="factura" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fecini" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="marca" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="modelo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ano" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chasis" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vigmem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cod_mem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="carmen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="anomem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contrato" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_veh" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.socios" Member="socios">
+    <Type Name="socios">
+      <Column Name="ciruc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="apellidos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="lugar_nacimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fecha_nacimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="estado_civil" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="genero" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="profesion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="apellido_conyu" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="nombre_conyu" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ciudad_domi" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="direccion_domi" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="sector_domi" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="edificio_domi" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="piso_domi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="departamento_domi" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="referencia_domi" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="telefono_contac" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="celular_contac" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="email_contac" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="nombre_empr_trab" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ciudad_trab" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="direccion_trab" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="sector_trab" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="referencia_trab" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="telefono_trab" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fax_trab" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="email_trab" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="marca_vehi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="modelo_vehi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="color_vehi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="placa_vehi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tipo_for_pag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="banco_for_pag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ncheque_for_pag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nombr_tarjet_for_pag" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ntarjeta_for_pag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="plazo_for_pag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ncontrato_membr" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="tipo_membr" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="vendedor_membr" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="fecha_afiliacion_membr" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="fecha_vencimie_membr" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="valor_sin_iva" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="valor_con_iva" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="envio_corresponden" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="id_nova" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cod_tarjeta" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="porfactu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="factura" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cod_suc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MA_VENDEDOR" Member="MA_VENDEDOR">
+    <Type Name="MA_VENDEDOR">
+      <Column Name="MA_VENDEDORID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="MA_VENDEDOR" Member="MA_VENDEDOR1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Table_1" Member="Table_1">
+    <Type Name="Table_1">
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="horasoliserv" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="solicitante" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nombresocio" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ciruc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="averia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tipocontrato" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="marca" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="modelo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="color" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="placas" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lugarembarque" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ciudad" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="lugardesembarque" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="plataforma" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="operador" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ejecutivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="anio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idexp" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="realizado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tarifa" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="localizado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="terminado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nfactura" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="formacobro" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="razon_anula" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="observa_adicional" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ncontrato_membr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="km_salida" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="km_embarque" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="km_desembarque" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="km_entrada" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="km_recorrido" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="km_cobertura" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="id_abaste" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fech_salida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fech_embarque" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fech_desembarque" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fech_entrada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

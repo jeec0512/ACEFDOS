@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AWA_ACCOUNTING" Class="Data_AWA_ACCOUTINGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.1.159\ANETA;Initial Catalog=AWA_ACCOUNTING;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AWA_ACCOUNTINGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tmp_mayorizacion" Member="tmp_mayorizacion">
+    <Type Name="tmp_mayorizacion" Id="ID1">
+      <Column Name="CODIGO_CUENTA_CONTABLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRE_CUENTA_CONTABLE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DEBE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="HABER" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SALDO" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tmp_cntmov_docc" Member="tmp_cntmov_docc">
+    <Type Name="tmp_cntmov_docc" Id="ID2">
+      <Column Name="id_cntmov_docc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="periodo" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="secuencial_tipo_documento" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="secuencial_ejercicio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="detalle" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="tot_deb" Type="System.Decimal" DbType="Decimal(12,6)" CanBeNull="true" />
+      <Column Name="tot_cre" Type="System.Decimal" DbType="Decimal(12,6)" CanBeNull="true" />
+      <Column Name="difer" Type="System.Decimal" DbType="Decimal(12,6)" CanBeNull="true" />
+      <Column Name="fac_prov" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="modif" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="user_create" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="user_update" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="periodo_bloqueado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="id_sucursal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_documento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaIni" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="esAutomatico" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tmp_cntmov_docm" Member="tmp_cntmov_docm">
+    <Type Name="tmp_cntmov_docm" Id="ID3">
+      <Column Name="id_cntmov_docm" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_cntmov_docc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_cod_tercero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cod_cta" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cod_suc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="cod_cco" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="cod_ter" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="des_mov" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="num_che" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="deb_mov" Type="System.Decimal" DbType="Decimal(12,6)" CanBeNull="true" />
+      <Column Name="cre_mov" Type="System.Decimal" DbType="Decimal(12,6)" CanBeNull="true" />
+      <Column Name="doc_ref" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="user_create" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="user_update" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="nom_cta" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AWA_CONTROL_PERIODOS" Member="AWA_CONTROL_PERIODOS">
+    <Type Name="AWA_CONTROL_PERIODOS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="YEAR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERIODO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_AT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="USER_CREATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UPDATED_AT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="USER_UPDATE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.usp_MayorizacionCalculo_V5" Method="usp_MayorizacionCalculo_V5">
+    <Parameter Name="ano" Type="System.Int32" DbType="Int" />
+    <Parameter Name="periodo" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.sp_contabilizacionEgresos_v2" Method="sp_contabilizacionEgresos_v2">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.sp_contabilizacionDetalleEgresos_v2" Method="sp_contabilizacionDetalleEgresos_v2">
+    <Parameter Name="FECHAINI" Parameter="fECHAINI" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FECHAFIN" Parameter="fECHAFIN" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="SUCURSAL" Parameter="sUCURSAL" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CAJA" Parameter="cAJA" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="id_cntmov_docc" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="numero" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_contabilizacionEgresos_v3" Method="sp_contabilizacionEgresos_v3">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sucursal" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="caja" Type="System.String" DbType="VarChar(1)" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.sp_visualizacionEgresos" Method="sp_visualizacionEgresos">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.sp_contabilizacionEgresos_v4" Method="sp_contabilizacionEgresos_v4">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_visualizacionEgresosDet" Method="sp_visualizacionEgresosDet">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="idCabecera" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_visualizacionEgresosCab" Method="sp_visualizacionEgresosCab">
+    <Parameter Name="ACCION" Parameter="aCCION" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sucursalFiltro" Type="System.String" DbType="VarChar(3)" />
+    <ElementType IdRef="ID2" />
+  </Function>
+</Database>

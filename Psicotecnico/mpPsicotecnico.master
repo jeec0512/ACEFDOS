@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpPsicotecnico.master.cs" Inherits="Psicotecnico_mpPsicotecnico" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+	<style>
+			.main-hamb {
+				width: 100%;
+				background: #4e94ab;
+				
+			}
+
+			.btn-menu {
+				display: none;
+			}
+
+			.main-hamb .lblHamb {
+				display: block;
+				width: 30px;
+				height: 30px;
+				padding: 10px;
+				border-right: 1px solid #fff;
+			}
+
+			.main-hamb .lblHamb:hover {
+				cursor: pointer;
+				background: rgba(0,0,0,0.3);
+			}
+
+			.main-nav  {
+				z-index:0;
+			}
+			
+			.main-nav .main-menu {
+				position: absolute;
+				z-index:99;
+				background: #4e94ab;
+				margin: 0;
+				list-style: none;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				width: 30%;
+				margin-left: -70%;
+				transition: all 0.5s;
+			}
+
+			.main-nav .main-menu li {
+				border-right: 1px solid #fff;
+			}
+
+			.main-nav .main-menu li:hover {
+				background: rgba(0,0,0,0.3);
+			}
+
+			.main-nav .main-menu li a {
+				display: block;
+				padding: 15px 15px;
+				color: #fff;
+				text-decoration: none;
+				font-size: medium;
+			}
+
+			.btn-menu:checked ~ .main-nav .main-menu {
+				margin: 0;
+			}
+			
+		</style>
+    <div class="main-hamb">
+        <input type="checkbox" id="btn-menu" class="btn-menu" />
+        <label for="btn-menu" class="lblHamb">
+            <img src="../images/iconos/hamb.png" alt="Menú" />
+        </label>
+        
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <li>
+                    <asp:HyperLink ID="lCambFecPsico" CssClass="gradientSub" runat="server" NavigateUrl="~/Psicotecnico/cambioFechaPsico.aspx">Fecha Psicotécnico</asp:HyperLink>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

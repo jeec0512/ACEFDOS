@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpCartera.master.cs" Inherits="Cartera_mpCartera" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" Runat="Server">
+     <aside>
+        <nav>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lEstadoCliente" CssClass="gradientSub" runat="server" NavigateUrl="~/Cartera/estadoCliente.aspx">Estado cliente</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lCarteraIngresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Cartera/carteraIngresos.aspx">Cartera ingresos</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lEstadoProveedor" CssClass="gradientSub" runat="server" NavigateUrl="~/Cartera/estadoProveedor.aspx">Estado proveedor</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lRetencionProveedor" CssClass="gradientSub" runat="server" NavigateUrl="~/Cartera/retencionesProveedor.aspx">Retenciones del proveedor</asp:HyperLink>
+                </li>
+            </ul>
+
+           
+
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" Runat="Server">
+     <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Principal.master.cs" Inherits="Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ANETA</title>
+    <link rel="shortcut icon" href="images/iconos/icoaneta2.png" />
+
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Chivo|Vollkorn" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+
+    <link href="App_Themes/Estilos/estiloPrincipal.css" rel="stylesheet" />
+    <link href="App_Themes/Estilos/estiloFormulario.css" rel="stylesheet" />
+    <link href="App_Themes/Estilos/estiloProcesos.css" rel="stylesheet" />
+    <link href="App_Themes/Estilos/eventos.css" rel="stylesheet" />
+    <link href="App_Themes/Estilos/Login.css" rel="stylesheet" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-136666470-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136666470-1');
+        function mpSeleccionOnOk() {
+
+            var mpddlProvincia = document.getElementById("mpddlProvincia");
+            if (typeof mpddlProvincia == 'undefined' || typeof mpddlProvincia == null) {
+                alert('indefinido');
+            }
+            else {
+                txtDireccionmpjeec.value = mpddlProvincia.options[mpddlProvincia.selectedIndex].value;
+
+            }
+        }
+    </script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id="main_wrapper">
+
+                <header style="background:#002e69;">
+
+                    <section id="logotipo">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/iconos/logoBlanco.png" AlternateText="ANETA" Style="opacity: 1;height:5rem" />
+                    </section>
+
+
+                    <section id="titulo">
+                        <h1>AUTOMOVIL CLUB DEL ECUADOR</h1>
+                    </section>
+                    <section id="subtitulo">
+                        <h2>jeec</h2>
+
+                    </section>
+                    <asp:Label runat="server" ID="lblusuario" ForeColor="White" Font-Size="X-Small"></asp:Label>
+                    <span id="spUsuario" runat="server" style="color:red;"></span>
+                    <nav>
+
+                        <ul class="horizontal">
+                            <li>
+                                <asp:HyperLink ID="lInicio" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Default.aspx">Inicio</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lCatalogo" CssClass="lnkBarraH" runat="server" NavigateUrl="~/catalogo/inicioCatalogo.aspx">Catálogo</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lIngresos" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Ingreso/inicioIngreso.aspx">Ingresos</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lEgresos" CssClass="lnkBarraH" runat="server" NavigateUrl="~/egreso/inicioEgreso.aspx">Egresos</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lTesoreria" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Tesoreria/inicioTesoreria.aspx">Tesorería</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lContabilidad" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Contabilidad/InicioContabilidad.aspx">Contabilidad</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lTributacion" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Tributacion/inicioTributacion.aspx">Tributación</asp:HyperLink>
+                            </li>
+
+                            <li>
+                                <asp:HyperLink ID="lInformes" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Informes/inicioInforme.aspx">Informes</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lCartera" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Cartera/inicioCartera.aspx">Cartera</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lSocios" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Socio/inicioSocio.aspx">Socios</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lAwmMembresias" CssClass="lnkBarraH" runat="server" NavigateUrl="~/awmMembresias/inicioAwmMembresia.aspx">AWM-Membresía</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lValija" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Valija/inicioValija.aspx">Valija</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lEscuela" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Escuela/inicioEscuela.aspx">Escuela</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lSecAcademica" CssClass="lnkBarraH" runat="server" NavigateUrl="~/secretariaAcademica/inicioSecretariaAcademica.aspx">Secretaría Académica</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lPsicotecnico" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Psicotecnico/inicioPsicotecnico.aspx">Psicotécnicos</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lFlotaVehicular" CssClass="lnkBarraH" runat="server" NavigateUrl="~/flota/inicioFlota.aspx">Flota vehicular</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lCertificadoIso" CssClass="lnkBarraH" runat="server" NavigateUrl="~/CertificadoIso/inicioCertificadoIso.aspx">Certificado ISO</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lHerramientas" CssClass="lnkBarraH" runat="server" NavigateUrl="~/Herramienta/inicioHerramienta.aspx">Herramientas</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="lSalir" CssClass="lnkBarraH" runat="server" NavigateUrl="~/ingresar.aspx">Salir</asp:HyperLink>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </header>
+
+                <div id="main_container" style="background-image: url('~//images//fondos//fondo3.jpg')">
+                    <div id="columnIzq">
+
+                        <asp:ContentPlaceHolder ID="contenidoMenuContextual" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+
+                    <div id="content" >
+                        <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="js/funciones.js"></script>
+</body>
+</html>

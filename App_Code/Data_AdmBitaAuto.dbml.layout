@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.25" name="Data_AdmBitaAuto">
+  <DataContextMoniker Name="/Data_AdmBitaAutoDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f6657314-539b-4970-89d2-2d850d0f9947" absoluteBounds="0.75, 1.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/Data_AdmBitaAutoDataContext/SUCURSAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6a74521-77c3-4750-9cd5-71455141c186" absoluteBounds="0.765, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b50735f-3ef5-4cef-9576-4641af944267" absoluteBounds="4.75, 5.875, 2, 3.1170068359375">
+      <DataClassMoniker Name="/Data_AdmBitaAutoDataContext/VEHICULO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fea00301-1b80-4230-94bf-77eaf62f3686" absoluteBounds="4.765, 6.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 3.06899251302083); (1.75 : 7.43350341796875); (4.75 : 7.43350341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Data_AdmBitaAutoDataContext/SUCURSAL/SUCURSAL_VEHICULO" />
+      <nodes>
+        <classShapeMoniker Id="f6657314-539b-4970-89d2-2d850d0f9947" />
+        <classShapeMoniker Id="2b50735f-3ef5-4cef-9576-4641af944267" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

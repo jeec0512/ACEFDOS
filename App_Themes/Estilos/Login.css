@@ -1,0 +1,166 @@
+﻿a, a:visited
+{
+	border:none 0px;
+	color:white;
+	margin:0px;
+	padding:0px;
+	text-decoration:none;	
+}
+a:hover
+{
+	text-decoration:underline;
+}
+
+body 
+{
+	background-color:#F4F4F4;
+	color:black;
+	font-family: Lucida Grande,Arial,sans-serif;
+	font-size:68%;
+	margin: 10px;
+	padding: 0;
+}
+
+img
+{
+	border:none 0px;
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+.cFL 
+{
+	float:left;
+    width: 450px; 
+    height: 150px; 
+    top: 4px; 
+    left: 2px;
+}
+.cFR 
+{
+	float: right;
+}
+.cPosRel 
+{
+
+    position: relative;
+
+
+}
+.cPosAbs 
+{
+	position: absolute;
+}
+/*--------Empiezan Clases para el Login----------*/
+.TextoBienvenido
+{
+    font-size: 11px;
+    color: green;
+    font-family: Arial;
+    background-color: transparent;
+     
+}
+.TextoLogin
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #7CBACF;
+	font-family: Arial;
+    font-weight: 800;
+}
+.txtRegistro
+{
+	border-left: 1px solid #8E8E8E;
+	border-right: 1px solid #B8B8B8;
+	border-top: 1px solid #8E8E8E;
+	border-bottom: 1px solid #B8B8B8;
+	float:left;
+	margin-left:14px;
+	width:64%;
+}
+.txtCapit
+{
+	text-transform:capitalize;
+}
+.txtMultiline
+{
+	border-left: 1px solid #8E8E8E;
+	border-right: 1px solid #B8B8B8;
+	border-top: 1px solid #8E8E8E;
+	border-bottom: 1px solid #B8B8B8;
+	font-family: Lucida Grande,Arial,sans-serif;
+	margin:5px 10px 11px 10px;
+	text-align:center;
+	width:80%;
+}
+.txtMultiline2
+{
+	border-left: 1px solid #8E8E8E;
+	border-right: 1px solid #B8B8B8;
+	border-top: 1px solid #8E8E8E;
+	border-bottom: 1px solid #B8B8B8;
+	float:left;
+	margin-left:14px;
+	text-align:center;
+	width:80%;
+}
+.txtSingleLine
+{
+	border-left: 1px solid #8E8E8E;
+	border-right: 1px solid #B8B8B8;
+	border-top: 1px solid #8E8E8E;
+	border-bottom: 1px solid #B8B8B8;
+	height:16px;
+	margin:5px 10px 11px 10px;
+	width:80%;
+}
+/*Clases para formar el Login*/
+.FormaLogin
+{
+	height:356px;
+	width:530px;
+	margin:80px auto auto auto;
+}
+.LeftFormaLogin
+{
+	background-image: url('../../images/login/izquierda.png') ;
+	background-repeat: no-repeat;
+	height: 356px;
+	width: 22px;
+	float:left;
+}
+.CenterFormaLogin
+{
+	background-image: url('../../images/login/centro.png');
+	background-repeat:repeat-x;
+	height: 356px;
+	width: 450px;
+	float:left;
+}
+.RightFormaLogin
+{
+	background-image: url('../../images/login/derecha.png');
+	background-repeat: no-repeat;
+	height: 356px;
+	width: 41px;
+	float:left;
+}
+.txtControl 
+{
+	border-top-style: none;
+	font-family: Arial;
+	border-right-style: none;
+	border-left-style: none;
+	background-color: #D7D7D7;
+	border-bottom-style: none;
+	margin-left:10px;
+	width: 205px;
+	height: 22px;
+}
+
+
+.btnIniciar:hover{
+    background:white;
+
+}
+/*--------Terminan Clases para el Login----------*/

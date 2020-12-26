@@ -1,0 +1,121 @@
+﻿
+body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-main {
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        margin-bottom: 1rem;
+    }
+
+    .header-det {
+        position: relative;
+        font-size: 1em;
+    }
+
+
+    .imagenAnt {
+        width: 6rem;
+        height: 4rem;
+    }
+
+    .imagenAneta {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .escuela {
+        font-size: 1em;
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        position: relative;
+    }
+
+    .curso {
+        font-size: 1em;
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .horario {
+        font-size: 1em;
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        position: relative;
+    }
+
+    .titulo-main {
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 0.1fr 7fr 2fr 2fr 2fr 2fr 10fr 0.5fr 2fr 2fr;
+        position: relative;
+    }
+
+    .item-titulo {
+        border: 1px solid black;
+    }
+
+    .calificacion {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .item-materia {
+        border: 0.1px solid black;
+    }
+
+    .notas {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .item-notas {
+        border: 1px solid black;
+    }
+
+
+    .grilla {
+        border-collapse: inherit;
+        text-align: left;
+        width: 100%;
+    }
+
+
+        .grilla th {
+            padding: 4px 2px;
+            color: #707083;
+            text-shadow: 1px 1px 0px #ffffff;
+            background: -weblit-gradient(linear,left bottom, left top,color-stop(0,#e5e5e9),color-stop(1,#fbfbfc));
+            border: 0.5px solid #c1c1c1;
+            font-size: 0.5em;
+            text-align: left;
+        }
+
+            .grilla th a {
+                color: White;
+                text-decoration: none;
+            }
+
+                .grilla th a:hover {
+                    color: black;
+                    text-decoration: none;
+                }
+
+
+        .grilla td {
+            padding: 1px;
+            border: 1px solid #c1c1c1;
+            color: black;
+            font-size: 0.5em;
+        }
+
+        .grilla .alt {
+            background: linear-gradient(#fff,#e6e6e6);
+        }
+

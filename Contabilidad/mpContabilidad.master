@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpContabilidad.master.cs" Inherits="Contabilidad_mpContabilidad" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+    <style>
+        .main-hamb {
+            width: 100%;
+            background: #4e94ab;
+        }
+
+        .btn-menu {
+            display: none;
+        }
+
+        .main-hamb .lblHamb {
+            display: block;
+            width: 30px;
+            height: 30px;
+            padding: 10px;
+            border-right: 1px solid #fff;
+        }
+
+            .main-hamb .lblHamb:hover {
+                cursor: pointer;
+                background: rgba(0,0,0,0.3);
+            }
+
+        .main-nav {
+            z-index: 0;
+        }
+
+            .main-nav .main-menu {
+                position: absolute;
+                z-index: 99;
+                background: #4e94ab;
+                margin: 0;
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                width: 30%;
+                margin-left: -70%;
+                transition: all 0.5s;
+            }
+
+                .main-nav .main-menu li {
+                    border-right: 1px solid #fff;
+                }
+
+                    .main-nav .main-menu li:hover {
+                        background: rgba(0,0,0,0.3);
+                    }
+
+                    .main-nav .main-menu li a {
+                        display: block;
+                        padding: 15px 15px;
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: medium;
+                    }
+
+        .btn-menu:checked ~ .main-nav .main-menu {
+            margin: 0;
+        }
+    </style>
+    <div class="main-hamb">
+        <input type="checkbox" id="btn-menu" class="btn-menu" />
+        <label for="btn-menu" class="lblHamb">
+            <img src="../images/iconos/hamb.png" alt="Menú" />
+        </label>
+
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <li>
+                    <asp:HyperLink ID="lCntIngresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/cntIngresos.aspx">Planificador de fechas para contabilizar Ingresos</asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="lCntEgresos" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/cntEgresos.aspx">Planificador de fechas para contabilizar Egresos</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lRegistroLibroDiario" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/registroLibroDiario.aspx">Registro Libro Diario</asp:HyperLink>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="lLibroDiario" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/libroDiario.aspx">Libro Diario</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lLibroMayor" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/libroMayor.aspx">Libro Mayor</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lMayorizar" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/mayorizar.aspx">Mayorizar por período</asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="lAutorizarRetencion" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/autorizarRetenciones.aspx">Autorizar retenciones</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lAwaContabilidad" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/AWAContabilidad.aspx">AWACounting</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="lAperturaPeriodo" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/aperturaPeriodo.aspx">Apertura de período </asp:HyperLink>
+                </li>
+                 <li>
+                    <asp:HyperLink ID="lContabilizacion" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/contabilizacion.aspx">Registro contable</asp:HyperLink>
+                </li>
+
+                 <li>
+                    <asp:HyperLink ID="HyperLink1" CssClass="gradientSub" runat="server" NavigateUrl="~/Contabilidad/mayorizar2.aspx">Mayorizar por período 2</asp:HyperLink>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

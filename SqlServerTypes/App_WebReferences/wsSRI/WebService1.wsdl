@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obNomarticulo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ambiente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoEmision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="razonSocial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreComercial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="claveAcceso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codDoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estab" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoEmi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secuencial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirMatriz" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaEmision" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirEstablecimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contribuyenteEspecial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="obligadoContabilidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoIdentificacionSujetoRetenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="razonSocialSujetoRetenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identificacionSujetoRetenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="periodoFiscal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cadena1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cadena2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cadena3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cadena4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cadena5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cadena6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cadena7" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="obNomarticuloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obNomarticuloResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="obNomarticuloSoapIn">
+    <wsdl:part name="parameters" element="tns:obNomarticulo" />
+  </wsdl:message>
+  <wsdl:message name="obNomarticuloSoapOut">
+    <wsdl:part name="parameters" element="tns:obNomarticuloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="obNomarticulo">
+      <wsdl:input message="tns:obNomarticuloSoapIn" />
+      <wsdl:output message="tns:obNomarticuloSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obNomarticulo">
+      <soap:operation soapAction="http://tempuri.org/obNomarticulo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obNomarticulo">
+      <soap12:operation soapAction="http://tempuri.org/obNomarticulo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://190.63.17.119:8081/pruebaWeb/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://190.63.17.119:8081/pruebaWeb/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

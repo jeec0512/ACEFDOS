@@ -1,0 +1,66 @@
+body{
+	margin: 0;	
+	padding: 0;	
+	font-family: sans-serif;
+	background: #111;
+	}
+
+h1{
+  	text-align: center;
+  		color: #eee;
+  }
+
+  .circular-progress{
+  	&,
+  	&:before,
+  	&:after{
+  		width: 12rem;	
+  		height: 12rem;	
+  		border-radius: 50%;
+  	}
+  	margin: auto 	;
+  	position: relative;
+  	transform:rotate(90deg);
+  	background: linear-gradient(
+  		0deg,
+  		#fff 50%,
+  		rgba(#fff,.2)
+  		50%
+  		);
+	&:before,
+	&:after{
+		position: absolute;
+  		top: 0;	
+  		left: 0;
+  		color: #fff;
+  		text-align: center;
+	}
+  	&:before{
+  		content:"HTML5";
+  		background: #111 content-box;
+  		padding: .5em;
+  		box-sizing: border-box;
+  		font-size: 	2rem;
+  		line-height: 	8rem;
+  		transform:rotate(-90deg);
+  	}
+
+  	&:after{
+  		content:"60%";
+   		background: linear-gradient(
+  			transparent 50%,
+  			#111 50%
+  			);
+  		transform: scale(1.1) rotate(-90deg);
+  		line-height: 13rem;	
+  	}
+  }
+
+  @function progress($percent){
+  	$deg: $percent/100 * 180;
+  	@return #{$deg}deg;
+  }
+
+  h1{
+  	tranSform: rotate(progress(20));
+  }

@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Principal.master" AutoEventWireup="true" CodeFile="mpEscuela.master.cs" Inherits="Escuela_mpEscuela" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act1" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="Server">
+    <aside>
+        <nav>
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink17" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/evaluacion_ant_2019.aspx">Evaluación ANT 2019</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink12" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/pensumAcademico.aspx">Pensum académico</asp:HyperLink>
+                </li>
+            </ul>
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink13" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/disponibilidadAutos.aspx">Disponibilidad de autos</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink10" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/controlEstudiantil.aspx">Control estudiantil</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="lCursosFacturados" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/cursosFacturados.aspx">Cursos facturados</asp:HyperLink>
+                </li>
+            </ul>
+
+
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink2" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/certificadoSicopractico.aspx">Certificado Psicopráctico</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink1" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/reporteSicoPracticos.aspx">Reporte/Certif/Psicoprácticos</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink3" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/verificarCertificado.aspx">Verificar/Certif/Psicoprácticos</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink4" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/creacionHorarios.aspx">Creación de horarios</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink5" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/matricularAlumno2.aspx">Matricular alumno</asp:HyperLink>
+                </li>
+            </ul>
+
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink6" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/registroNotas.aspx">REGISTRO DE NOTAS</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink7" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/pedidoTitulos.aspx">Generación de pedido de títulos</asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink11" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/imprimirPedidoTitulos.aspx">Imprimir pedido de títulos</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink16" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/envioEmailTitulos.aspx">Notificación a estudiantes </asp:HyperLink>
+                </li>
+            </ul>
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink8" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/asignacionTitulos.aspx">Asignación de títulos</asp:HyperLink>
+                </li>
+            </ul>
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink9" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/imprimirTitulos.aspx">Impresión de títulos</asp:HyperLink>
+                </li>
+            </ul>
+     
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink14" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/horariosAsignados.aspx">Horario asignados</asp:HyperLink>
+                </li>
+            </ul>
+            
+
+            <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink18" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/ingresoNotas.aspx">Ingresar notas</asp:HyperLink>
+                </li>
+            </ul>
+
+             <ul class="vertical">
+                <li>
+                    <asp:HyperLink ID="HyperLink15" CssClass="gradientSub" runat="server" NavigateUrl="~/Escuela/hds2.aspx">handSomeTable</asp:HyperLink>
+                </li>
+            </ul>
+
+
+           
+        </nav>
+    </aside>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
+    <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

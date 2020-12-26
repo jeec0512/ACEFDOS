@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="COMISIONES" Class="DataComisionesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=UIODBSERVER\ANETA;Initial Catalog=COMISIONES;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="COMISIONESConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TB_MEMBRESIA" Member="TB_MEMBRESIA">
+    <Type Name="TB_MEMBRESIA">
+      <Column Name="MEM_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MEM_NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MEM_PRECIO" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="MEM_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="US_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="US_ID_MODIFICA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEM_FECHA_MODIFICA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_VENDEDOR" Member="TB_VENDEDOR">
+    <Type Name="TB_VENDEDOR">
+      <Column Name="VEN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VEN_NOMBRE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEN_APELLIDO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VEN_ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TPC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VEN_IDENTIFICACION" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SUC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUC_DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

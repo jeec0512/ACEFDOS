@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<!-- 
+  Visual Studio global web project settings.
+-->
+<VisualWebDeveloper>
+
+  <comReferences>
+    <reference Name="interop.crystalreportscubedefmodellib" ID="{44AD71D4-4905-491D-B179-B5D91EB57374}\1.0\0"/>
+    <reference Name="interop.crystalreportsreportdefmodellib" ID="{BF40B97D-06EA-4AB1-91DE-18CB29A2B25A}\1.0\0"/>
+    <reference Name="interop.crystalanalysiscommlayerlib" ID="{AAA3345B-2177-4D19-8D75-21688FE36251}\1.0\0"/>
+    <reference Name="interop.crystalanalysisrequestmodellib" ID="{3FD134DF-56E0-4860-B065-BF986A086176}\1.0\0"/>
+    <reference Name="interop.crystalreportscommonobjectmodellib" ID="{FDB9B69E-BA79-4B13-9E96-8373AF162AEA}\1.0\0"/>
+    <reference Name="interop.crystalreportsdatadefmodellib" ID="{9B2F3E7B-8D45-47E8-95D3-3A9C1B22437F}\1.0\0"/>
+    <reference Name="interop.crystalreportsdtsagentlib" ID="{3D5D05F6-E97D-43A0-90DC-5D8A6C6C6DB1}\13.0\0"/>
+    <reference Name="interop.crystalreportscontrollerslib" ID="{FA810FF5-70DA-4F98-A5E3-387D9577EF24}\1.0\0"/>
+  </comReferences>
+</VisualWebDeveloper>
