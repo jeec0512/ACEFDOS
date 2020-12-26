@@ -6,9 +6,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="Server">
     <asp:ScriptManager runat="server" ID="sm1">
     </asp:ScriptManager>
-
-
-
     <!-- MENSAJE!-->
     <asp:Panel ID="pnMensaje2" CssClass="" runat="server" Visible="true">
         <asp:Label ID="lblMensaje" runat="server" Text="" Visible="true"></asp:Label>
@@ -17,7 +14,6 @@
 
     <!-- CABECERA INGRESO DE SUCURSAL Y FECHAs  !-->
     <asp:Panel ID="pnTitulos" CssClass="" runat="server" Visible="true">
-
         <fieldset id="fdTitulos" class="fieldset-principal">
             <legend>Cierre de egresos</legend>
             <asp:Panel ID="pnDatos" CssClass="pnPeq" runat="server" Visible="true">
