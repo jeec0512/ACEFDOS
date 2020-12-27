@@ -23,7 +23,7 @@
                 <asp:DropDownList ID="ddlSucursal2" runat="server" CssClass="peqDdl" DataTextField="nom_suc" DataValueField="sucursal">
                 </asp:DropDownList>
 
-                 <asp:Panel ID="pnCaja" runat="server" CssClass="pnFormDdl">
+                <asp:Panel ID="pnCaja" runat="server" CssClass="pnFormDdl">
                     <asp:DropDownList ID="ddlCaja" runat="server">
                         <asp:ListItem Value="S">S</asp:ListItem>
                         <asp:ListItem Value="K">K</asp:ListItem>
@@ -35,8 +35,7 @@
                 </asp:Panel>
 
                 <asp:TextBox runat="server" ID="txtFechaIni" CssClass="txtPeq"></asp:TextBox>
-                <act1:CalendarExtender ID="Calfecha" PopupButtonID="" runat="server" TargetControlID="txtFechaIni" Format="dd/MM/yyyy">
-                </act1:CalendarExtender>
+                <act1:CalendarExtender ID="Calfecha" PopupButtonID="" runat="server" TargetControlID="txtFechaIni" Format="dd/MM/yyyy"></act1:CalendarExtender>
                 <act1:MaskedEditExtender ID="maskFecha" runat="server" TargetControlID="txtFechaIni" Mask="99/99/9999"
                     MessageValidatorTip="true"
                     OnFocusCssClass="MaskedEditFocus" OnInvalidCssClass="MaskedEditError" MaskType="date" InputDirection="RightToLeft"
@@ -52,16 +51,12 @@
                     AcceptNegative="Left"
                     DisplayMoney="Left" ErrorTooltipEnabled="True" />
 
-                 <asp:Panel ID="pnImprimir" CssClass="" runat="server" Visible="true">
-                      <asp:Button ID="btnConsultar" runat="server" CssClass="btnProceso" Text="Consultar" OnClick="btnConsultar_Click" />
-                <asp:Button ID="btnImprimir" runat="server" CssClass="btnProceso"  Text="Imprimir documentos SRI" OnClick="btnImprimir_Click" />
-                <asp:Button ID="btnImprimirAuto" runat="server" CssClass="btnProceso" Text="Imprimirautoconsumos" OnClick="btnImprimirAuto_Click"  />
-                <asp:Button ID="btnMemos" runat="server" CssClass="btnProceso"  Text="Imprimir documentos sin validez tributaria" OnClick="btnMemos_Click" />
-               
-                     </asp:Panel>
-
-
-
+                <asp:Panel ID="pnImprimir" CssClass="" runat="server" Visible="true">
+                    <asp:Button ID="btnConsultar" runat="server" CssClass="btnProceso" Text="Consultar" OnClick="btnConsultar_Click" />
+                    <asp:Button ID="btnImprimir" runat="server" CssClass="btnProceso" Text="Imprimir documentos SRI" OnClick="btnImprimir_Click" />
+                    <asp:Button ID="btnImprimirAuto" runat="server" CssClass="btnProceso" Text="Imprimirautoconsumos" OnClick="btnImprimirAuto_Click" />
+                    <asp:Button ID="btnMemos" runat="server" CssClass="btnProceso" Text="Imprimir documentos sin validez tributaria" OnClick="btnMemos_Click" />
+                </asp:Panel>
 
             </asp:Panel>
         </fieldset>
@@ -125,9 +120,6 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-
-
-
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                 <HeaderStyle BackColor="#0C80BF" Font-Bold="True" ForeColor="White" />
@@ -146,10 +138,10 @@
 
         <fieldset id="fdCabeceraCaja" class="fieldset-principal">
             <legend></legend>
-            <asp:Panel ID="pnDatosCierre" CssClass="pnPeq" runat="server" Visible="true" GroupingText="" ForeColor="#1d92e9" >
+            <asp:Panel ID="pnDatosCierre" CssClass="pnPeq" runat="server" Visible="true" GroupingText="" ForeColor="#1d92e9">
                 <asp:Label ID="lblNumero" CssClass="lblPeq" runat="server" Text="Código" Visible="true"></asp:Label>
-                <asp:TextBox ID="txtNumero" CssClass="txtSmall" runat="server" Visible="TRUE" Enabled="false" 
-                    AutoPostBack="True"  placeholder="Código"></asp:TextBox>
+                <asp:TextBox ID="txtNumero" CssClass="txtSmall" runat="server" Visible="TRUE" Enabled="false"
+                    AutoPostBack="True" placeholder="Código"></asp:TextBox>
                 <asp:Label ID="lblFecha" CssClass="lblPeq" runat="server" Text="Fecha" Visible="true"></asp:Label>
                 <asp:TextBox ID="txtFecha" CssClass="txtSmall" runat="server" Visible="TRUE" Enabled="false" AutoPostBack="True"></asp:TextBox>
                 <asp:Label ID="lblEstado" CssClass="lblPeq" runat="server" Text="Estado" Visible="true"></asp:Label>
@@ -168,10 +160,10 @@
                 <asp:TextBox ID="txtTnoefectivo" CssClass="txtSmall" runat="server" Visible="TRUE" Enabled="false"></asp:TextBox>
             </asp:Panel>
             <asp:Panel ID="Panel1" CssClass="pnPeq" runat="server" Visible="true" GroupingText="" ForeColor="#1d92e9">
-                <asp:Button ID="btnCerrar" runat="server" CssClass="btnProceso" Text="Cerrar caja" 
-                    OnClick="btnCerrar_Click"  />
-                <asp:Button ID="btnRegresar" runat="server" CssClass="btnProceso" Text="regresar" 
-                    OnClick="btnRegresar_Click"  />
+                <asp:Button ID="btnCerrar" runat="server" CssClass="btnProceso" Text="Cerrar caja"
+                    OnClick="btnCerrar_Click" />
+                <asp:Button ID="btnRegresar" runat="server" CssClass="btnProceso" Text="regresar"
+                    OnClick="btnRegresar_Click" />
 
             </asp:Panel>
         </fieldset>
@@ -184,47 +176,47 @@
             <asp:Button ID="btnExcelFe" runat="server" CssClass="btnLargoForm " Text="A Excel" Visible="true" OnClick="btnExcelFe_Click" />
 
             <asp:GridView ID="grvEgresosDetalle" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999"
-            BorderStyle="None" BorderWidth="1px" CellPadding="5" GridLines="Vertical" HorizontalAlign="Center" Width="90%"
-            AllowSorting="True" PageSize="50" >
-            <AlternatingRowStyle BackColor="#DCDCDC" />
-            <Columns>
-                <asp:TemplateField HeaderText="# Documento" ItemStyle-Wrap="true">
-                    <ItemTemplate>
-                        <%# Eval("numeroDocumento") %>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="R.U.C./C.C." ItemStyle-Wrap="true">
-                    <ItemTemplate>
-                        <%# Eval("ruc") %>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Autorización" ItemStyle-Wrap="true">
-                    <ItemTemplate>
-                        <%# Eval("autorizacion") %>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Valor factura" ItemStyle-Wrap="true">
-                    <ItemTemplate>
-                        <%# Eval("valorFactura","{0:F2}".ToString()) %>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Valor retención" ItemStyle-Wrap="true">
-                    <ItemTemplate>
-                        <%# Eval("valorRetencion","{0:F2}".ToString()) %>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="A pagar" ItemStyle-Wrap="true">
-                    <ItemTemplate>
-                        <%# Eval("apagar","{0:F2}".ToString()) %>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Concepto" ItemStyle-Wrap="true">
-                    <ItemTemplate>
-                        <%# Eval("concepto") %>
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                BorderStyle="None" BorderWidth="1px" CellPadding="5" GridLines="Vertical" HorizontalAlign="Center" Width="90%"
+                AllowSorting="True" PageSize="50">
+                <AlternatingRowStyle BackColor="#DCDCDC" />
+                <Columns>
+                    <asp:TemplateField HeaderText="# Documento" ItemStyle-Wrap="true">
+                        <ItemTemplate>
+                            <%# Eval("numeroDocumento") %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="R.U.C./C.C." ItemStyle-Wrap="true">
+                        <ItemTemplate>
+                            <%# Eval("ruc") %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Autorización" ItemStyle-Wrap="true">
+                        <ItemTemplate>
+                            <%# Eval("autorizacion") %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Valor factura" ItemStyle-Wrap="true">
+                        <ItemTemplate>
+                            <%# Eval("valorFactura","{0:F2}".ToString()) %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Valor retención" ItemStyle-Wrap="true">
+                        <ItemTemplate>
+                            <%# Eval("valorRetencion","{0:F2}".ToString()) %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="A pagar" ItemStyle-Wrap="true">
+                        <ItemTemplate>
+                            <%# Eval("apagar","{0:F2}".ToString()) %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Concepto" ItemStyle-Wrap="true">
+                        <ItemTemplate>
+                            <%# Eval("concepto") %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                 <HeaderStyle BackColor="#0C80BF" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#999999" ForeColor="black" HorizontalAlign="Center" />
                 <RowStyle BackColor="#EEEEEE" ForeColor="black" />
@@ -233,7 +225,7 @@
                 <SortedAscendingHeaderStyle BackColor="#0000A9" />
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#000065" />
-        </asp:GridView>
+            </asp:GridView>
         </fieldset>
     </asp:Panel>
 
